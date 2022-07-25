@@ -1,0 +1,136 @@
+.AddItemsContainer {
+    position: absolute;
+    /*margin: 0 0 0 0;*/
+
+}
+
+
+.buy_plus_button_container button:hover,
+.buy_minus_button_container button:hover{
+    background-color: white;
+    color: #2ebe00;
+    transition: 0.4s;
+}
+
+.buy_plus_button_container button{
+    border-radius: 10px 0;
+    border: 1px greenyellow;
+
+    background-color: rgba(0, 0, 0, 0.09);
+    /*color: #000000;*/
+    transform: scale(1);
+
+    position: absolute;
+    margin: 5.5rem 0 0 7.6rem;
+    width: 1.25rem;
+    transition: 0.4s;
+
+}
+
+.buy_minus_button_container button{
+
+    border-radius: 10px 0;
+    border: 1px greenyellow;
+
+    background-color: rgba(0, 0, 0, 0.09);
+    transform: scale(1);
+
+    position: absolute;
+    margin: 5.5rem 0 0 1rem;
+    width: 1.25rem;
+    transition: 0.4s;
+}
+
+.buy_minus_button_container button:disabled{
+    display: none;
+}
+
+.buy_count_button_container button{
+    border-radius: 10px 0;
+    border: 1px greenyellow;
+
+    background-color: rgb(186, 255, 174);
+    color: #2a2a2a;
+    transform: scale(1.2);
+
+    position: absolute;
+    margin: 5.5rem 0 0 4.3rem;
+    min-width: 1.25rem;
+    max-width: fit-content;
+
+    transition: 0.4s;
+}
+
+.buy_count_button_container button:disabled{
+    display: none;
+}
+
+.buy_plus_button_container {
+    border: none;
+    color: #124400;
+    /*background-color: #c0ffb9;*/
+
+    width: fit-content;
+    height: fit-content;
+    z-index: 5;
+
+    transition: 1s;
+}
+
+
+.product {
+    border: solid rgba(141, 141, 141, 0.19);
+    border-radius: 0 0 1rem 1rem;
+    background: #fffff4;
+    box-shadow: rgba(141, 141, 141, 0.4) 5px 6px 10px;
+
+    display: flex;
+    flex-direction: column;
+
+    width: 10rem;
+    height: 13.5rem;
+
+    margin: 5px;
+
+    /*transition: transform 200ms ease-in;*/
+    transition: 0.5s;
+}
+
+.container-ImageButton {
+
+}
+
+.product-button {
+    height: fit-content;
+}
+
+.product-image {
+    display: flex;
+    flex-direction: column;
+
+    max-width: fit-content;
+
+}
+
+.container-TextPrice {
+    padding-left: 0.2rem;
+}
+
+.product-text {
+}
+
+.product-price {
+
+
+}
+
+.product:hover {
+
+
+    /*transform: scale(1.05);*/
+    border: solid rgba(255, 255, 255, 0.51);
+    background-color: rgba(255, 255, 255, 0.64);
+    cursor: pointer;
+    transition: 0.5s;
+}
+

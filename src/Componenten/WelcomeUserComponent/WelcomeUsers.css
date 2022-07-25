@@ -1,0 +1,34 @@
+
+
+.welcome-UsersPage {
+    display: flex;
+    flex-direction: row;
+    background: -moz-radial-gradient(circle at 39% 61%, rgba(139, 192, 74, 1) 0%, rgba(177, 255, 80, 0.8) 100%);
+    background: -webkit-radial-gradient(circle at 39% 61%, rgba(139, 192, 74, 1) 0%, rgba(177, 255, 80, 0.8) 100%);
+    background: -o-radial-gradient(circle at 39% 61%, rgba(139, 192, 74, 1) 0%, rgba(177, 255, 80, 0.8) 100%);
+    background: -ms-radial-gradient(circle at 39% 61%, rgba(139, 192, 74, 1) 0%, rgba(177, 255, 80, 0.8) 100%);
+    background: radial-gradient(circle at 39% 61%, rgba(139, 192, 74, 1) 0%, rgba(177, 255, 80, 0.8) 100%);
+    box-shadow: rgba(0, 0, 0, 0.34) 5px 10px 20px;
+    border-radius: 20rem 15rem 5rem 45rem;
+
+    height: auto;
+    padding: 3rem 2rem;
+    width: fit-content;
+}
+
+.gegevens-groet {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.gegevens-groet h1 {
+    font-size: 4.5rem;
+}
+
+.gegevens-groet p {
+    font-size: 2rem;
+}
+
+

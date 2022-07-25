@@ -1,0 +1,57 @@
+.drinken-container {
+    /*background: rgba(146, 255, 210, 0.33);*/
+    box-shadow: rgba(141, 141, 141, 0.44) 5px 10px 20px;
+
+
+    /* ff 3.6+ */
+    background:-moz-linear-gradient(90deg, rgba(0, 255, 243, 0.93) 0%, rgba(0, 188, 212, 0.93) 50%, rgba(130, 234, 238, 0.94) 100%);
+
+    /* safari 5.1+,chrome 10+ */
+    background:-webkit-linear-gradient(90deg, rgba(0, 255, 243, 0.93) 0%, rgba(0, 188, 212, 0.93) 50%, rgba(130, 234, 238, 0.94) 100%);
+
+    /* opera 11.10+ */
+    background:-o-linear-gradient(90deg, rgba(0, 255, 243, 0.93) 0%, rgba(0, 188, 212, 0.93) 50%, rgba(130, 234, 238, 0.94) 100%);
+
+    /* ie 6-9 */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#82EAEE', endColorstr='#00FFF3', GradientType=0 );
+
+    /* ie 10+ */
+    background:-ms-linear-gradient(90deg, rgba(0, 255, 243, 0.93) 0%, rgba(0, 188, 212, 0.93) 50%, rgba(130, 234, 238, 0.94) 100%);
+
+    /* global 94%+ browsers support */
+    background:linear-gradient(90deg, rgba(0, 255, 243, 0.93) 0%, rgba(0, 188, 212, 0.93) 50%, rgba(130, 234, 238, 0.94) 100%);
+
+
+    border-radius: 50rem 50rem 40rem 20rem ;
+
+    margin: 2rem 2rem;
+    padding: 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-basis: fit-content;
+    justify-content: center;
+    align-items: center;
+    min-width: 800px;
+    max-width: 800px;
+    /*height: available;*/
+}
+
+@media screen and (max-width: 1050px) {
+
+    .drinken-container {
+
+        min-width: 500px;
+
+    }
+
+}
+
+@media screen and (max-width: 740px) {
+
+    .drinken-container {
+
+        min-width: 400px;
+
+    }
+
+}

@@ -1,0 +1,27 @@
+
+
+.section_home_one {
+    display: flex;
+    justify-content: center;
+    padding-top: 5rem;
+
+
+}
+
+
+.Home_Logo {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: auto;
+    width: 50%;
+    margin: auto;
+    padding-top: 10rem;
+    transition: 1s;
+
+}
+
+.Home_Logo:hover {
+    transform: scale(1.1);
+    transition: 1s;
+}

@@ -1,0 +1,45 @@
+.cart-layout {
+    display: flex;
+    flex-direction: column;
+    transition: 0.4s;
+
+
+
+}
+
+.cartNumberShown {
+    transform: scale(1.5);
+    color: white;
+    background-color: #ff8686;
+    border-radius: 20rem;
+    display: flex;
+    justify-content: center;
+    width: 1.2rem;
+
+    position: fixed;
+    margin: -1.5rem 0 0 3rem;
+    transition: 0.4s;
+
+
+}
+
+/*.float-area{*/
+/*    height:100vh;*/
+/*    display: flex;*/
+/*    flex-direction:column;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*}*/
+
+/*.floating-img{*/
+/*    transform: translateY(-10%);*/
+/*    animation: floater 1.5s infinite;*/
+/*    transition: ease 0.5s;*/
+/*    width: 80px;*/
+/*    height:80px;*/
+/*}*/
+
+/*@keyframes floater {*/
+/*    0%{transform: translateY(-10%);transition: ease 0.5s;}*/
+/*    50%{transform: translateY(10%);transition: ease 0.5s;}*/
+/*}*/

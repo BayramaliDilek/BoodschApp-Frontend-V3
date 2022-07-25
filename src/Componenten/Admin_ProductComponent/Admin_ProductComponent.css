@@ -1,0 +1,14 @@
+.Product-Form-Container input[type=text] {
+    display: flex;
+    justify-content: center;
+    max-width: fit-content;
+    align-content: center;
+    text-align: center;
+}
+
+.Product-Form-Container {
+    display: flex;
+    justify-content: center;
+    margin: 5rem;
+
+}

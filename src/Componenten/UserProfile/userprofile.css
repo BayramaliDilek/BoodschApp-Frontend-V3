@@ -1,0 +1,22 @@
+.userprofile-page {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 1.5rem;
+
+    border-radius: 45rem 20rem 15rem 5rem;
+
+}
+
+.userprofile-container {
+    margin: 2rem 0 0 2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    flex-basis: fit-content;
+
+
+}

@@ -1,0 +1,37 @@
+.producten-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    align-items: center;
+
+    /*flex-basis: fit-content;*/
+    /*flex-shrink: 1;*/
+    /*flex-wrap: wrap;*/
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+
+
+
+}
+
+
+.product-container {
+    display: flex;
+    flex-shrink: 1;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-container a {
+    list-style-type: none;
+}
+
+
+.background-image {
+    background: url('../../assets/Product_assets/persoonsgegevensBackgroundFoto.jpg') no-repeat center center fixed;
+    background-size: cover;
+    max-height: 100%;
+}

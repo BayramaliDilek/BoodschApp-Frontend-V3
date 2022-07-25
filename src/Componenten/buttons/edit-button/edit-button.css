@@ -1,0 +1,33 @@
+.edit-button{
+    border: none;
+    background-color: rgba(102, 255, 0, 0.67);
+    box-shadow: rgba(75, 75, 75, 0.34) 5px 5px 10px;
+
+    border-radius: 1.5rem;
+    display: flex;
+    flex-direction: row;
+
+    margin: 1rem 1rem 5rem 2rem;
+
+    transition: transform 200ms ease-in-out;
+}
+
+.pencil {
+    display: flex;
+    width: 50px;
+    padding: 0;
+}
+
+
+
+.edit-button:hover{
+    transform: scale(1.1);
+    transition: transform 200ms ease-in-out;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1050px) {
+
+
+}
+

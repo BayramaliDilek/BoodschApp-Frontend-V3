@@ -1,0 +1,11 @@
+.login-account-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: row;
+    margin: 20px;
+
+    transition: transform 200ms ease-in-out;
+
+}

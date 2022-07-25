@@ -1,0 +1,61 @@
+.fruit-container {
+    /*background: rgba(88, 220, 81, 0.94);*/
+
+    /* ff 3.6+ */
+    background:-moz-linear-gradient(90deg, rgba(110, 255, 116, 0.91) 0%, rgba(69, 255, 87, 0.93) 100%);
+
+    /* safari 5.1+,chrome 10+ */
+    background:-webkit-linear-gradient(90deg, rgba(110, 255, 116, 0.91) 0%, rgba(69, 255, 87, 0.93) 100%);
+
+    /* opera 11.10+ */
+    background:-o-linear-gradient(90deg, rgba(110, 255, 116, 0.91) 0%, rgba(69, 255, 87, 0.93) 100%);
+
+    /* ie 6-9 */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45FF57', endColorstr='#6EFF74', GradientType=0 );
+
+    /* ie 10+ */
+    background:-ms-linear-gradient(90deg, rgba(110, 255, 116, 0.91) 0%, rgba(69, 255, 87, 0.93) 100%);
+
+    /* global 94%+ browsers support */
+    background:linear-gradient(90deg, rgba(110, 255, 116, 0.91) 0%, rgba(69, 255, 87, 0.93) 100%);
+
+    box-shadow: rgba(141, 141, 141, 0.44) 5px 10px 20px;
+
+    border-radius: 30rem 15rem 5rem 10rem;
+
+    margin: 2rem 2rem;
+    padding: 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-basis: fit-content;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+    min-width: 800px;
+    /*height: available;*/
+}
+
+.fruit-container a {
+    list-style-type: none;
+}
+
+@media screen and (max-width: 1050px) {
+
+    .fruit-container {
+
+        min-width: 500px;
+
+    }
+
+}
+
+@media screen and (max-width: 740px) {
+
+    .fruit-container {
+
+        min-width: 400px;
+
+    }
+
+}
+

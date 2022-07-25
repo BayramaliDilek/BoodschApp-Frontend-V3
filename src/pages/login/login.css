@@ -1,0 +1,190 @@
+.login_pagina input[type=text],
+input[type=password],
+input[type=email],
+textarea {
+    font-family: 'Nunito', sans-serif;
+    font-size: 22px;
+    padding: 0.25rem;
+    border-radius: 0.5rem;
+    width: min-content;
+}
+
+
+input,
+[type=password] {
+    font-size: 1vw;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    padding: 20px;
+    width: 100%;
+    margin: 5px;
+    border: none;
+    box-shadow: inset rgba(59, 124, 38, 0.34) 1px 1px 20px;
+}
+
+
+.login_pagina {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+
+    flex-wrap: wrap;
+    flex-shrink: 1;
+
+    padding: 10rem 1rem;
+
+}
+
+.login_pagina h1 {
+    font-size: x-large;
+}
+
+.form-login {
+    border-radius: 50rem 50rem 40rem 20rem ;
+
+    background: #eeeeee;
+    box-shadow: #b7b7b7 5px 20px 20px;
+    background: url('../../assets/InlogFotoTwee.jpg') no-repeat center center;
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+
+    min-width: 35rem;
+    height: 20rem;
+
+    padding: 1rem;
+    margin: 1rem;
+
+
+
+    text-align: center;
+    align-items: center;
+
+
+}
+
+.form_pagina input::placeholder {
+    font-size: 12px;
+}
+
+
+input:enabled, [type=text],
+[type=password] {
+    border: none;
+    font-size: 15px;
+}
+
+.login-button button {
+    margin-top: 30px;
+    font-size: 15px;
+    border: none;
+    background: white;
+    border-radius: 20px;
+    width: 30%;
+    height: 10%;
+}
+
+.login-button button:hover {
+    background: #e4ffe4;
+    box-shadow: #c7c7c7  4px 4px 10px 5px;
+}
+
+
+
+
+.timeout-succes-login {
+    color: #000000;
+    box-shadow: #b7b7b7 5px 20px 20px;
+    background: url('../../assets/InlogFotoTwee.jpg') no-repeat center center;
+    background-size: cover;
+
+    max-width: 30rem;
+    margin: auto;
+    min-height: 14rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+.timeout-succes-login a {
+    font-style: italic;
+}
+
+.timeout-succes-login p {
+    margin: 1rem;
+}
+
+.timeout-succes-login h1 {
+    margin: 1rem;
+}
+
+.errorInloggen {
+    display: flex;
+    justify-content: center;
+    color: red;
+}
+
+/*KEYFRAMES*/
+
+.rotate-hor-center {
+    -webkit-animation: rotate-hor-center 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+    animation: rotate-hor-center 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+
+@-webkit-keyframes rotate-hor-center {
+    0% {
+        -webkit-transform: rotateX(0);
+        transform: rotateX(0);
+    }
+    100% {
+        -webkit-transform: rotateX(-360deg);
+        transform: rotateX(-360deg);
+    }
+}
+@keyframes rotate-hor-center {
+    0% {
+        -webkit-transform: rotateX(0);
+        transform: rotateX(0);
+    }
+    100% {
+        -webkit-transform: rotateX(-360deg);
+        transform: rotateX(-360deg);
+    }
+}
+
+
+
+
+
+.succes-slide-bottom {
+    -webkit-animation: succes-slide-bottom 0.5s cubic-bezier(0.165, 0.840, 0.440, 1.000) both;
+    animation: succes-slide-bottom 0.5s cubic-bezier(0.165, 0.840, 0.440, 1.000) both;
+}
+
+@-webkit-keyframes succes-slide-bottom {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    100% {
+        -webkit-transform: translateY(100px);
+        transform: translateY(100px);
+    }
+}
+@keyframes succes-slide-bottom {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    100% {
+        -webkit-transform: translateY(100px);
+        transform: translateY(100px);
+    }
+}
+

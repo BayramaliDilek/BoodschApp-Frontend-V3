@@ -1,0 +1,67 @@
+.persoonsgegevens-page-container {
+    padding-top: 10rem;
+}
+
+.persoonsgegevens-background {
+
+    background: url('../../../assets/Product_assets/BackgroundShortExtra.jpg') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+
+    border-radius: 50rem 60rem 45rem 27rem;
+    box-shadow: rgba(141, 141, 141, 0.44) 5px 10px 20px;
+
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+
+    margin: 2rem 2rem;
+    padding: 3rem 5rem;
+
+    min-height: 400px;
+
+}
+
+
+
+.userprofile-collumn {
+    display: none;
+}
+
+@media screen and (max-width: 1050px) {
+
+    .persoonsgegevens-background {
+        display: flex;
+        flex-direction: column;
+        padding: 2rem 2rem;
+        margin: 2rem;
+        min-width: min-content;
+
+    }
+
+    .userprofile-row {
+        display: none;
+    }
+
+    .userprofile-collumn {
+        display: flex;
+    }
+
+    .userprofile-collumn button {
+        display: flex;
+        transform: scale(0.8);
+    }
+
+    .userprofile-collumn button:hover {
+        display: flex;
+        transform: scale(0.9);
+    }
+
+
+}
+
+
+
+
+

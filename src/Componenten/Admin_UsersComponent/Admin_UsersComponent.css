@@ -1,0 +1,62 @@
+.Admin_UsersComponent {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    background: -moz-radial-gradient(circle at 39% 61%, rgba(139, 192, 74, 1) 0%, rgba(177, 255, 80, 0.8) 100%);
+    background: -webkit-radial-gradient(circle at 39% 61%, rgba(139, 192, 74, 1) 0%, rgba(177, 255, 80, 0.8) 100%);
+    background: -o-radial-gradient(circle at 39% 61%, rgba(139, 192, 74, 1) 0%, rgba(177, 255, 80, 0.8) 100%);
+    background: -ms-radial-gradient(circle at 39% 61%, rgba(139, 192, 74, 1) 0%, rgba(177, 255, 80, 0.8) 100%);
+    background: radial-gradient(circle at 39% 61%, rgba(139, 192, 74, 1) 0%, rgba(177, 255, 80, 0.8) 100%);
+    box-shadow: rgba(0, 0, 0, 0.34) 5px 10px 20px;
+    border-radius: 20rem 15rem 5rem 15rem;
+
+    height: auto;
+    padding: 3rem 3rem;
+    margin: 2rem 2rem 8rem 2rem;
+}
+
+table, td, th {
+    border: 1px solid #000000;
+}
+
+th {
+    background-color: #0c4200;
+    color: white;
+    text-align: left;
+}
+
+td, th {
+    padding: 8px;
+}
+
+td > img {
+    width: 60px;
+    border-radius: 50%;
+}
+
+table {
+    border-collapse: collapse;
+    width: 90%;
+    margin: 20px 0;
+}
+
+.delete-button {
+    transform: scale(0.6);
+    border: none;
+    background-color: #ffffff;
+    transition: transform 200ms ease-in-out;
+
+}
+
+.delete-button:hover {
+    transform: scale(0.8);
+    border: none;
+    background-color: #ffffff;
+    transition: transform 200ms ease-in-out;
+
+    cursor: pointer;
+}

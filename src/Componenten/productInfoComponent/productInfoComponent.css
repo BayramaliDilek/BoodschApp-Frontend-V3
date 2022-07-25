@@ -1,0 +1,157 @@
+.page-background {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    box-shadow: rgba(141, 141, 141, 0.4) 5px 5px 5px;
+    padding: 5rem;
+    background-color: white;
+    margin: 5rem 10rem 10rem;
+
+    border-radius: 25rem 10rem;
+}
+
+.product-info-container {
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.product-infoImage {
+    display: flex;
+    margin-right: 5rem;
+    height: max-content;
+}
+
+.product-infoText p {
+    font-style: italic;
+    font-size: 0.8rem;
+}
+
+.product-infoText h1 {
+    font-size: 2rem;
+}
+
+.vl {
+    border-left: 1px solid green;
+    height: inherit;
+}
+
+.product-infoButton {
+    box-shadow: rgba(141, 141, 141, 0.4) 3px 5px 5px;
+
+    margin-top: 1rem;
+    font-family: inherit;
+    border: none;
+    width: fit-content;
+    background-color: #89ff63;
+    transition: 0.4s;
+}
+
+.product-infoButton:hover{
+    transition: 0.4s;
+    transform: scale(1.05);
+    background-color: #4be31b;
+}
+
+.product-infoButton:active{
+    transition: 0.4s;
+    transform: scale(1.05);
+    background-color: #36881e;
+}
+
+.product-infoTextButton {
+    margin-left: 5px;
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+
+
+
+@media screen and (max-width: 1100px){
+
+    .page-background {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        box-shadow: rgba(141, 141, 141, 0.4) 5px 5px 5px;
+        margin: 2rem;
+        background-color: white;
+    }
+
+    .product-info-container {
+        align-content: center;
+        max-width: fit-content;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+
+    }
+
+    .product-infoImage {
+        align-content: center;
+        margin-right: 1rem;
+        display: flex;
+        flex-direction: column;
+
+        max-width: fit-content;
+
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        flex-shrink: 2;
+
+    }
+
+}
+
+@media screen and (max-width: 740px){
+
+    .page-background {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        margin: 2rem 2rem 2rem 2rem;
+        background-color: white;
+
+        box-shadow: rgba(141, 141, 141, 0.4) 5px 5px 5px;
+    }
+
+    .product-info-container {
+        max-width: fit-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        height: inherit;
+    }
+
+    .product-infoImage {
+        align-content: center;
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .hl {
+        margin-top: 2rem;
+        border-top: 1px solid green;
+        width: 15rem;
+    }
+
+    .product-infoTextButton {
+        background-color: rgba(255, 255, 255, 0.56);
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+
+
+    }
+
+}

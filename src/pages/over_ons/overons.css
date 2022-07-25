@@ -1,0 +1,74 @@
+.Over_ons_article_one_container h1 {
+    /*border: solid black;*/
+    font-size: 50px;
+    width:100%;
+    padding-bottom: 5rem;
+    text-shadow: #d3d3d3 3px 3px 3px;
+
+    flex-basis: 100%;
+    flex-shrink: 1;
+    flex-grow: 0;
+}
+
+.P_OverOns {
+    padding-bottom: 5vh;
+}
+
+.Over_ons_article_one {
+    /*margin-top: 6vh;*/
+    /*border: solid red;*/
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10rem 2rem 2rem 2rem;
+
+    flex-basis: 100%;
+    flex-shrink: 1;
+    flex-grow: 0;
+}
+
+.Over_ons_article_one_container {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40%;
+    padding-right: 5vw;
+    padding-bottom: 0px;
+    align-items: center;
+}
+
+.Over_ons_foto {
+    display: flex;
+    justify-content: center;
+    height: 600px;
+    box-shadow: #8d8d8d 5px 10px 10px;
+}
+
+.Over_ons_article_two {
+    /*border: solid red;*/
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    /*align-items: center;*/
+    padding: 10vh;
+}
+
+.Over_ons_article_two_container {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40%;
+    padding-left: 5vw;
+    padding-bottom: 0px;
+}
+
+.Over_ons_article_two_container h1 {
+    /*border: solid black;*/
+    font-size: 50px;
+    width:100%;
+    padding-bottom: 5vh;
+    text-shadow: #d3d3d3 3px 3px 3px;
+}
