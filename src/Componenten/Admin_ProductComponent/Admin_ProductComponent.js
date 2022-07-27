@@ -56,14 +56,28 @@ function Admin_ProductComponent() {
     }
 
 
-
-    return(
+    return (
 
         <>
 
+
             <div className="Product-Form-Container">
+
+
+                <div className="admin-product-text">
+
+                    Voor nieuwe producten vult u een nieuwe artikelnummer in.
+                    <br/>
+                    Voor bestaande producten vult u het bestaande artikelnummer in om een bestaand product te wijzigen.
+                    <br/>
+                    Voor de prijs gebruikt u i.p.v een 'komma' een 'punt' om decimale getallen in te voeren. bijvoorbeeld: € 2.19
+
+
+                </div>
+
                 <form className="product-form"
                       onSubmit={handleSubmit(onSubmit)}>
+
 
                     <div>
 
@@ -83,7 +97,6 @@ function Admin_ProductComponent() {
                         <br/>
 
 
-
                         <label htmlFor="details-product-name">
                             Product-naam:
                             <input
@@ -100,35 +113,60 @@ function Admin_ProductComponent() {
                         <br/>
 
 
-
                         <label htmlFor="product_type">
-                            Product-soort:
-                            <input
-                                type="text"
+                            <select
                                 id="product_type"
                                 {...register("product_type", {
                                     required: {value: true, message: message}
                                 })}
                                 placeholder="product-soort"
+                            >
 
-                            />
+                                <option value="Fruit">
+                                    Fruit
+                                </option>
+                                <option value="Brood">
+                                    Brood
+                                </option>
+                                <option value="Frisdranken">
+                                    Frisdranken
+                                </option>
+                                <option value="Kaas">
+                                    Kaas
+                                </option>
+                                <option value="Diepvries">
+                                    Diepvries
+                                </option>
+                                <option value="Slagerij">
+                                    Slagerij
+                                </option>
+                                <option value="Zuivel & Eieren">
+                                    Zuivel & Eieren
+                                </option>
+
+                            </select>
                         </label>
                         {errors.product_type && <p>{errors.product_type.message}</p>}
                         <br/>
 
                     </div>
 
-                    <div>
+                    <div className="product-omschrijving">
 
                         <label htmlFor="details-product-description">
                             Omschrijving:
-                            <input
+                            <textarea
                                 type="text"
                                 id="product_description"
+                                rows="10"
+                                cols="50"
                                 {...register("product_description", {
                                     required: {value: false, message: message}
                                 })}
-                                placeholder="omschrijving"
+                                placeholder="Bijvoorbeeld: Frambozen hebben een fluweelzachte en
+                                zoete smaak. Het is beter om de frambozen niet te wassen,
+                                zo blijft de heerlijke smaak het beste bewaard. Lekker door een
+                                fruitsalade of smoothie. "
 
                             />
                         </label>
@@ -137,18 +175,26 @@ function Admin_ProductComponent() {
 
                         <label htmlFor="details-product-ingredients">
                             Ingredienten:
-                            <input
+                            <textarea
                                 type="text"
+                                rows="10"
+                                cols="50"
                                 id="product_ingredients"
                                 {...register("product_ingredients", {
                                     required: {value: false, message: message}
                                 })}
-                                placeholder="ingrediënten"
+                                placeholder="Bijvoorbeeld: TARWEbloem, roomboter (MELK), water, gist,
+                                suiker, EI, zout, TARWEgluten,
+                                amylase, hemicellulase, meelverbeteraar (E300)."
 
                             />
                         </label>
                         {errors.product_ingredients && <p>{errors.product_ingredients.message}</p>}
                         <br/>
+
+                    </div>
+
+                    <div>
 
 
                         <label htmlFor="details-product-price">
@@ -166,9 +212,6 @@ function Admin_ProductComponent() {
                         {errors.product_price && <p>{errors.product_price.message}</p>}
 
 
-                    </div>
-
-                    <div>
 
                         <label htmlFor="details-product-quantity">
                             Voorraad
@@ -186,10 +229,15 @@ function Admin_ProductComponent() {
                         <br/>
 
 
+                        <div className="product-form-savebutton">
+                            <SaveButton/>
+
+
+                        </div>
+
                     </div>
 
 
-                    <SaveButton/>
 
 
                 </form>

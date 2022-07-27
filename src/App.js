@@ -19,6 +19,9 @@ import PrivateRoute from "./helpers/PrivateRoute/PrivateRoute";
 import UserInfo_Form from "./Componenten/UserInfo_Form/UserInfo_Form";
 import {Cart} from "./Componenten/Cart/Cart";
 import Admin_UsersComponent from "./Componenten/Admin_UsersComponent/Admin_UsersComponent";
+import AdminRoute from "./helpers/AdminRoute/AdminRoute";
+import Admin_ProductComponent from "./Componenten/Admin_ProductComponent/Admin_ProductComponent";
+import EditProfilePicture from "./Componenten/ImageComponent/EditProfilePicture/EditProfilePicture";
 
 
 function App() {
@@ -31,10 +34,6 @@ function App() {
 
 
             <Switch>
-
-                <Route exact path="/gebruikers-bekijken/">
-                    <Admin_UsersComponent/>
-                </Route>
 
                 <PrivateRoute exact path="/checkout">
                     {<PrivateRoute> <Cart/> </PrivateRoute>}
@@ -59,6 +58,18 @@ function App() {
                 <PrivateRoute exact path="/users/:user_id">
                     {<PrivateRoute> <UserInfo_Form/> </PrivateRoute>}
                 </PrivateRoute>
+
+                <PrivateRoute exact path="/users/:user_id/picture">
+                    {<PrivateRoute> <EditProfilePicture/> </PrivateRoute>}
+                </PrivateRoute>
+
+                <AdminRoute exact path="/producten-toevoegen/">
+                    {<AdminRoute> <Admin_ProductComponent/> </AdminRoute>}
+                </AdminRoute>
+
+                <AdminRoute exact path="/gebruikers-bekijken/">
+                    {<AdminRoute> <Admin_UsersComponent/> </AdminRoute>}
+                </AdminRoute>
 
                 <PrivateRoute exact path="/persoonsgegevens">
                     {<PrivateRoute> <PersoonGegevens/> </PrivateRoute>}

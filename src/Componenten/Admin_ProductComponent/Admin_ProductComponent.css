@@ -1,14 +1,83 @@
-.Product-Form-Container input[type=text] {
+.Product-Form-Container input[type=text]{
     display: flex;
     justify-content: center;
-    max-width: fit-content;
+    min-width: fit-content;
     align-content: center;
     text-align: center;
 }
 
 .Product-Form-Container {
+    padding-top: 10rem;
+
+}
+
+.product-form {
+    display: flex;
+    flex-direction: row;
+    margin: 5rem;
+    justify-content: space-evenly;
+    align-content: center;
+    text-align: center;
+}
+
+.product-form select{
     display: flex;
     justify-content: center;
-    margin: 5rem;
+    text-align: center;
+    padding: 1rem 4rem;
+    width: 100%;
+}
 
+.product-form option{
+
+}
+
+textarea {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.admin-product-text {
+
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin: 0 0.5rem;
+}
+
+.product-omschrijving {
+    margin: 0 0.5rem;
+}
+
+
+
+@media screen and (max-width: 1050px) {
+    .product-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .product-form-savebutton {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 3rem;
+    }
+}
+
+
+
+
+
+@media screen and (max-width: 740px) {
+    .product-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
 }

@@ -1,3 +1,28 @@
+.admin-elements {
+    display: flex;
+    flex-direction: row;
+    margin: 5rem;
+    justify-content: space-evenly;
+    transition: 0.5s;
+}
+
+.admin-elements-button {
+    background-color: #83ff5f;
+    padding: 1rem;
+    border-radius: 1rem;
+    transition: 0.5s;
+
+
+    box-shadow: rgba(75, 75, 75, 0.34) 5px 5px 10px;
+}
+
+.admin-elements-button:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+    background-color: #31c200;
+    cursor: pointer;
+}
+
 .persoonsgegevens-page-container {
     padding-top: 10rem;
 }
@@ -17,10 +42,18 @@
     justify-content: space-between;
 
     margin: 2rem 2rem;
-    padding: 3rem 5rem;
+    padding: 5rem 5rem;
 
     min-height: 400px;
 
+}
+
+userprofile-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
 }
 
 
@@ -29,7 +62,24 @@
     display: none;
 }
 
+.ShowProfilePicture{
+    width: 20rem;
+    border-radius: 5rem 0;
+    transition: 1s;
+}
+
+.ShowProfilePicture:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: 1s;
+}
+
+
+
+
+
 @media screen and (max-width: 1050px) {
+
 
     .persoonsgegevens-background {
         display: flex;
@@ -40,12 +90,30 @@
 
     }
 
+    .persoonsgegevens-container{
+
+        display: flex;
+        justify-content: center;
+    }
+
+
+    .ShowProfilePicture{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        margin: 1rem 0 0 0
+    }
+
+
+
     .userprofile-row {
         display: none;
     }
 
     .userprofile-collumn {
         display: flex;
+        justify-content: center;
     }
 
     .userprofile-collumn button {

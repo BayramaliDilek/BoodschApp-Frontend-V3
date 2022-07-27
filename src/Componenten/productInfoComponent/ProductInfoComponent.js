@@ -48,10 +48,15 @@ export const ProductInfoComponent = (props) => {
 
 
                             <h1>{props.productName}</h1>
+
+                            <p>Artikelnummer:  {props.product_id} </p>
                             € {props.productPrice}<br/>
                             <br/>
                             <h6>Omschrijving:</h6>
                             <p>{props.productDescription}</p>
+                            <br/>
+                            <h6>Ingrediënten:</h6>
+                            <p>{props.productIngredients}</p>
 
 
                         </div>

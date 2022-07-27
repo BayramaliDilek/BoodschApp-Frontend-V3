@@ -1,4 +1,9 @@
-function ImageComponent({fileName, url, key}) {
+import React from "react";
+import './ImageComponent.css';
+
+
+
+function ImageComponent({fileName, url}) {
 
 
 
@@ -10,12 +15,11 @@ function ImageComponent({fileName, url, key}) {
 
             <div>
 
-                <div>
+                <div className="profile-picture">
 
                     <img
                     alt={fileName}
                     src={url}
-                    key={key}
                     />
 
 

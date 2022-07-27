@@ -1,3 +1,7 @@
+.userspage-admin-element {
+    padding-top: 12rem;
+}
+
 .Admin_UsersComponent {
     display: flex;
     flex-direction: column;
@@ -15,30 +19,35 @@
     border-radius: 20rem 15rem 5rem 15rem;
 
     height: auto;
-    padding: 3rem 3rem;
-    margin: 2rem 2rem 8rem 2rem;
+    padding: 3rem 3rem 3rem 3rem;
+    margin: 0 2rem 8rem 2rem;
 }
 
-table, td, th {
+.admin_tbody {
+    margin: 0 1rem 1rem 0;
+}
+
+.Admin_UsersComponent table, td, th {
     border: 1px solid #000000;
 }
 
-th {
+.Admin_UsersComponent th {
     background-color: #0c4200;
     color: white;
-    text-align: left;
+    text-align: center;
 }
 
-td, th {
-    padding: 8px;
+.Admin_UsersComponent td {
+    text-align: center;
+
 }
 
-td > img {
+.Admin_UsersComponent td > img {
     width: 60px;
-    border-radius: 50%;
+    border-radius: 1rem 5rem;
 }
 
-table {
+.Admin_UsersComponent table {
     border-collapse: collapse;
     width: 90%;
     margin: 20px 0;
@@ -59,4 +68,26 @@ table {
     transition: transform 200ms ease-in-out;
 
     cursor: pointer;
+}
+
+@media screen and (max-width: 1050px) {
+
+    .Admin_UsersComponent {
+
+        transform: scale(0.7);
+
+
+    }
+
+}
+
+@media screen and (max-width: 740px) {
+
+    .Admin_UsersComponent {
+
+        transform: scale(0.5);
+
+
+    }
+
 }

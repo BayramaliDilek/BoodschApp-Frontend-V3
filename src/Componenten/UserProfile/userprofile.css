@@ -18,5 +18,8 @@
 
     flex-basis: fit-content;
 
+}
 
+.userprofile-container p {
+    font-size: 1rem;
 }

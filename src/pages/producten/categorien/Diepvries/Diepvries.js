@@ -42,6 +42,8 @@ function Diepvries() {
 
                             return (
 
+                                product.picture !== null ?
+
                                 <Product key={product.id}
 
                                          url={product.picture.url}
@@ -50,6 +52,14 @@ function Diepvries() {
                                          productPrice={product.price}
 
                                 />
+                                    :
+                                    <Product key={product.id}
+
+                                             product_id={product.id}
+                                             productName={product.productName}
+                                             productPrice={product.price}
+
+                                    />
                             )
                     })}
 

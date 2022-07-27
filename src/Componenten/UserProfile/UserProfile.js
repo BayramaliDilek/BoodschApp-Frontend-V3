@@ -26,12 +26,12 @@ function UserProfile() {
                          {person_firstname} {person_lastname}
                     </span>
 
-                    <span>
+                    <p>
                         {person_street_name} {person_house_number}-{person_house_number_add}
-                    </span>
-                    <div>
+                    </p>
+                    <p>
                         {person_zipcode} {person_city}
-                    </div>
+                    </p>
 
 
                 </div>

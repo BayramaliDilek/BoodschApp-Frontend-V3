@@ -99,8 +99,13 @@ function LogIn() {
                                 aria-invalid={validPwd ? "false" : "true"}
                                 placeholder="wachtwoord"
                             />
+
                         </label>
                         {errors.password && <p>{errors.password.message}</p>}<br/>
+
+                        <div className="errorInloggen">
+                            {error && "Er ging iets mis, controleer je gegevens en probeer het nog een keer."}
+                        </div>
 
                         <LogInButton
                             disabled={!validPwd || !validName}/>
@@ -120,9 +125,7 @@ function LogIn() {
 
             }
 
-            <div className="errorInloggen">
-            {error && "Er ging iets mis, controleer je gegevens en probeer het nog een keer."}
-            </div>
+
         </>
     )
 

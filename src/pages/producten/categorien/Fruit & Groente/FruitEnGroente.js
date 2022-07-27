@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import {Product} from "../../../../Componenten";
 import './fruit-en-groente.css'
+import {ReactComponent as ProductTempImage} from "../../../../assets/Product_assets/product_temp_picture.jpg";
 
 
 function FruitEnGroente(props) {
@@ -37,9 +38,9 @@ function FruitEnGroente(props) {
                 <div className="product-container">
 
                     {fruitProducts.map((product) => {
-                        if  (product.productType === 'Fruit') {
+                        if (product.productType === 'Fruit') {
 
-                        return (
+                            return (
 
                                 product.picture !== null ?
 
@@ -47,9 +48,7 @@ function FruitEnGroente(props) {
                                     <Product key={product.id}
                                              onAdd={onAdd}
 
-
                                              url={product.picture.url}
-
 
                                              product_id={product.id}
                                              productName={product.productName}
@@ -60,32 +59,26 @@ function FruitEnGroente(props) {
                                     :
 
                                     <Product key={product.id}
-                                             onAdd={onAdd}
 
 
                                              product_id={product.id}
                                              productName={product.productName}
                                              productPrice={product.price}
 
-
                                     />
 
 
+                            )
+                        }
+                    })}
+
+                </div>
 
 
-                    )
+            </section>
+        </>
+    )
+        ;
+}
 
-                    }})
-                    }
-
-                        </div>
-
-
-
-                        </section>
-                        </>
-                        )
-                        ;
-                    }
-
-                    export default FruitEnGroente;
+export default FruitEnGroente;
