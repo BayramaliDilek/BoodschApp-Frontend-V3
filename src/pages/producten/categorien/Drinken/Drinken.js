@@ -41,6 +41,7 @@ function Drinken() {
                         if (product.productType === 'Frisdranken')
 
                             return (
+                                product.picture !== null ?
 
                                 <Product key={product.id}
 
@@ -51,6 +52,15 @@ function Drinken() {
                                          productPrice={product.price}
 
                                 />
+                                    :
+                                    <Product key={product.id}
+
+
+                                             product_id={product.id}
+                                             productName={product.productName}
+                                             productPrice={product.price}
+
+                                    />
                             )
                     })}
 

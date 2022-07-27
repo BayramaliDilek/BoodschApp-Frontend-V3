@@ -49,6 +49,7 @@ function ProductInfo() {
                                               productName={productInfo.productName}
                                               productPrice={productInfo.price}
                                               productDescription={productInfo.description}
+                                              productIngredients={productInfo.ingredients}
                         />
 
                     }

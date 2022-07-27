@@ -15,7 +15,7 @@
     background:-ms-linear-gradient(90deg, rgb(32, 182, 0) 0%, rgb(19, 148, 35) 50%, rgba(26, 103, 15, 1) 50%);
     background:linear-gradient(90deg, rgb(31, 155, 0) 0%, rgb(34, 187, 18) 50%, rgb(16, 148, 0) 100%);
 
-    box-shadow: #9d9d9d 2px 10px 20px;
+    box-shadow: rgba(0, 0, 0, 0.44) 2px 10px 20px;
 
 
 }

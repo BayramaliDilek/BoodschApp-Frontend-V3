@@ -113,7 +113,11 @@
 }
 
 .container-TextPrice {
+    position: absolute;
+    margin: 8.6rem 0 0 0;
+    padding-right: 10px;
     padding-left: 0.2rem;
+    max-width: 10rem;
 }
 
 .product-text {
