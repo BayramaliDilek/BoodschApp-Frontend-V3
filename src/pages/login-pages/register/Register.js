@@ -8,7 +8,7 @@ import './register.css';
 import '../../../App.css'
 import {NavLink, useHistory} from "react-router-dom";
 
-const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
+const USER_REGEX = /^[A-z][A-z0-9-_]{4,11}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 const EMAIL_REGEX = /^(([^<>()\]\\.,;:\s@"]+(\.[^<>()\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
@@ -137,7 +137,7 @@ function Register() {
                     />
                     <p id="uidnote" className={userFocus && user && !validName ? "instructions" : "offscreen"}>
                         <FontAwesomeIcon icon={faInfoCircle}/>
-                        4 tot 24 karakters.<br/>
+                        4 tot 12 karakters.<br/>
                         Moet met een letter beginnen.<br/>
                         Letters, cijfers, onderstreepje en streepje zijn toegestaan.<br/>
                         Bijvoorbeeld: Piet-Pieter_25

@@ -3,6 +3,7 @@ import axios from "axios";
 import {AuthContext} from "../../../context/AuthContext";
 import ImageComponent from "../ImageComponent";
 import './ShowProfilePicture.css'
+import {Product} from "../../index";
 
 function ShowProfilePicture() {
 
@@ -37,27 +38,37 @@ function ShowProfilePicture() {
         fetchUser();
     }, []);
 
+
+
+
     return (
         <>
-
             <div className="profile-picture">
 
-            {Object.keys(users).length > 0 &&
+            {users.picture ?
 
-                <ImageComponent key={users.id}
 
-                                      fileName={users.picture.fileName}
-                                      url={users.picture.url}
 
-                />
+                <img src={users.picture.url} alt={users.picture.fileName} />
+                :
+                <p className="geen-profielfoto-styling"> U heeft nog geen profielfoto!
+                <br/>
+                    <br/>
+                    klik hier om een profiel foto toe te voegen!
+
+                </p>
+
+
 
 
             }
-
             </div>
+
         </>
 
     )
+
+
 
 
 }

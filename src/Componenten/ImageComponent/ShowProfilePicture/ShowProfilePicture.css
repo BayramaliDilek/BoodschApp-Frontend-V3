@@ -3,6 +3,19 @@
     border-radius: 5rem 0;
 }
 
+.imageastylenn {
+    width: 20rem;
+}
+
+.geen-profielfoto-styling {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+    background-color: rgba(188, 255, 165, 0.55);
+    border-radius: 5rem;
+}
+
 @media screen and (max-width: 1050px) {
 
     .profile-picture > img {

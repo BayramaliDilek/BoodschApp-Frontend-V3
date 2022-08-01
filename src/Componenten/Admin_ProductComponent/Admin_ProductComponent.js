@@ -6,14 +6,13 @@ import {useFormContext} from "react-hook-form";
 import {useHistory} from "react-router-dom";
 import SaveButton from "../buttons/save-button/SaveButton";
 import './Admin_ProductComponent.css'
+import Producten from "../../pages/producten/Producten";
 
 function Admin_ProductComponent() {
 
     const {register, formState: {errors}, handleSubmit} = useFormContext();
     const message = "..veld is verplicht";
     const history = useHistory();
-    // const {user} = useContext(AuthContext);
-    // const token = localStorage.getItem('token');
 
     async function sendProductData(productdata) {
         try {
@@ -56,6 +55,8 @@ function Admin_ProductComponent() {
     }
 
 
+
+
     return (
 
         <>
@@ -76,25 +77,25 @@ function Admin_ProductComponent() {
                 </div>
 
                 <form className="product-form"
-                      onSubmit={handleSubmit(onSubmit)}>
+                      onSubmit={handleSubmit(sendProductData)}>
 
 
                     <div>
 
 
-                        <label htmlFor="details-product-id">
-                            artikelnummer:
-                            <input
-                                type="text"
-                                id="product_id"
-                                {...register("product_id", {
-                                    required: {value: true, message: message}
-                                })}
-                                placeholder="artikelnummer"
-                            />
-                        </label>
-                        {errors.product_id && <p>{errors.product_id.message}</p>}
-                        <br/>
+                        {/*<label htmlFor="details-product-id">*/}
+                        {/*    artikelnummer:*/}
+                        {/*    <input*/}
+                        {/*        type="text"*/}
+                        {/*        id="product_id"*/}
+                        {/*        {...register("product_id", {*/}
+                        {/*            required: {value: true, message: message}*/}
+                        {/*        })}*/}
+                        {/*        placeholder="artikelnummer"*/}
+                        {/*    />*/}
+                        {/*</label>*/}
+                        {/*{errors.product_id && <p>{errors.product_id.message}</p>}*/}
+                        {/*<br/>*/}
 
 
                         <label htmlFor="details-product-name">
@@ -229,7 +230,12 @@ function Admin_ProductComponent() {
                         <br/>
 
 
-                        <div className="product-form-savebutton">
+
+
+
+                        <div className="product-form-savebutton"
+                        onClick={onSubmit}>
+
                             <SaveButton/>
 
 

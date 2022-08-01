@@ -3,6 +3,7 @@ import axios from 'axios';
 import {AuthContext} from "../../../context/AuthContext";
 import './EditProfilePicture.css'
 import {useHistory} from "react-router-dom";
+import {useFormContext} from "react-hook-form";
 
 function EditProfilePicture() {
 
@@ -51,11 +52,20 @@ function EditProfilePicture() {
 
             <div className="edit-profile-picture-container">
                 <h1>Afbeelding uploaden</h1>
+
+
                 <form onSubmit={sendImage}>
+
                     <label htmlFor="student-image">
-                        Kies afbeelding:
-                        <input type="file" name="image-field" id="student-image" onChange={handleImageChange}/>
+                        Kies afbeelding: (maximaal 1MB)
+                        <input type="file"
+                               name="file"
+                               id="student-image"
+                               onChange={handleImageChange}
+                        />
+
                     </label>
+
                     {previewUrl &&
                         <label>
                             Preview:
@@ -68,8 +78,7 @@ function EditProfilePicture() {
                     <div className="uploadPictureButton-div">
                     <button
                         className="uploadPictureButton"
-                        type="submit"
-                        onClick={savedPicture}>
+                        type="submit">
                         Uploaden
                     </button>
                     </div>
