@@ -23,6 +23,7 @@ import AdminRoute from "./helpers/AdminRoute/AdminRoute";
 import Admin_ProductComponent from "./Componenten/Admin_ProductComponent/Admin_ProductComponent";
 import EditProfilePicture from "./Componenten/ImageComponent/EditProfilePicture/EditProfilePicture";
 import EditProductPicture from "./Componenten/ImageComponent/EditProductPicture/EditProductPicture";
+import Admin_EditProductComponent from "./Componenten/Admin_EditProductComponent/Admin_EditProductComponent";
 
 
 function App() {
@@ -68,9 +69,13 @@ function App() {
                     {<AdminRoute> <Admin_ProductComponent/> </AdminRoute>}
                 </AdminRoute>
 
-                <AdminRoute exact path="/products/:product_id/picture">
-                    {<AdminRoute> <EditProductPicture/> </AdminRoute>}
-                </AdminRoute>
+                <Route exact path="/products/picture/:product_id">
+                    {<AdminRoute> <EditProductPicture/> </AdminRoute> }
+                </Route>
+
+                <Route exact path="/products/info/:product_id">
+                    {<AdminRoute> <Admin_EditProductComponent/> </AdminRoute> }
+                </Route>
 
                 <AdminRoute exact path="/gebruikers-bekijken/">
                     {<AdminRoute> <Admin_UsersComponent/> </AdminRoute>}

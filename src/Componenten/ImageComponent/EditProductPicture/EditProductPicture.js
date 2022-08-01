@@ -3,7 +3,7 @@ import axios from 'axios';
 import './EditProductPicture.css'
 import {useHistory, useParams} from "react-router-dom";
 
-function EditProductPicture() {
+export const EditProductPicture = (props) => {
 
     const token = localStorage.getItem('token');
 
@@ -21,12 +21,20 @@ function EditProductPicture() {
         setPreviewUrl(URL.createObjectURL(uploadedFile));
     }
 
+
+    console.log(useParams())
+
+
+
     async function sendImage(e) {
         e.preventDefault();
         const formData = new FormData();
         formData.append("file", file);
 
         try {
+
+
+
             const result = await axios.put(`http://localhost:8080/products/${product_id}/picture/`, formData,
                 {
                     headers: {

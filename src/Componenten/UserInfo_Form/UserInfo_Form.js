@@ -35,7 +35,6 @@ function UserInfo_Form() {
                     personHouseNumberAdd: persondata.person_house_number_add,
                     personCity: persondata.person_city,
                     personZipcode: persondata.person_zipcode,
-                    // personRadius: persondata.person_radius,
 
                 });
 

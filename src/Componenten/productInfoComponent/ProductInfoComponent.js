@@ -1,14 +1,15 @@
 import React, {useContext} from 'react';
 import './productInfoComponent.css';
 
-import {useHistory} from "react-router-dom";
+import {useHistory, useParams} from "react-router-dom";
 import {CartContext} from "../../context/CartContext";
+import AdminRoute from "../../helpers/AdminRoute/AdminRoute";
+
 
 
 export const ProductInfoComponent = (props) => {
 
     const history = useHistory();
-
 
     const [cart, setCart] = useContext(CartContext);
 
@@ -27,7 +28,11 @@ export const ProductInfoComponent = (props) => {
 
 
     function addPicture() {
-        history.push(`${props.product_id}/picture`)
+        history.push(`/products/picture/${props.product_id}`)
+    }
+
+    function editProduct() {
+        history.push(`/products/info/${props.product_id}`)
     }
 
 
@@ -84,9 +89,15 @@ export const ProductInfoComponent = (props) => {
 
                     <div>
 
+
                         <button className="product-infoPictureButton"
                                 onClick={addPicture}>
                             Voeg afbeelding toe
+                        </button>
+                        <br/>
+                        <button className="product-infoPictureButton"
+                                onClick={editProduct}>
+                            Wijzig product
                         </button>
 
                     </div>
