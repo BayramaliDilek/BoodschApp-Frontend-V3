@@ -20,6 +20,7 @@ export const Cart = () => {
     console.log(totalPrice.toFixed(2))
 
 
+
     return (
         <div>
 
@@ -68,7 +69,20 @@ export const Cart = () => {
 
                             <br/>
                             <h3><strong> Totaal prijs: € {totalPrice.toFixed(2)} </strong></h3>
+
+
+                            <div>
+
+                                <button className="cart-checkout-button">
+
+                                    Check-out
+                                </button>
+                            </div>
+
+
                         </div>
+
+
                     )}
             </div>
 

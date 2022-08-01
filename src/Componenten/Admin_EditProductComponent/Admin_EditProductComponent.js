@@ -2,11 +2,13 @@ import React, {useContext} from "react";
 
 import axios from "axios";
 import {useFormContext} from "react-hook-form";
-import {useHistory} from "react-router-dom";
+import {useHistory, useParams} from "react-router-dom";
 import SaveButton from "../buttons/save-button/SaveButton";
-import './Admin_ProductComponent.css'
+import './Admin_EditProductComponent.css'
 
-function Admin_ProductComponent() {
+function Admin_EditProductComponent() {
+
+    const {product_id} = useParams();
 
     const {register, formState: {errors}, handleSubmit} = useFormContext();
     const message = "..veld is verplicht";
@@ -14,7 +16,7 @@ function Admin_ProductComponent() {
 
     async function sendProductData(productdata) {
         try {
-            const response = await axios.post(`http://localhost:8080/products/create`,
+            const response = await axios.put(`http://localhost:8080/products/${product_id}`,
                 {
 
                     id: productdata.product_id,
@@ -64,7 +66,6 @@ function Admin_ProductComponent() {
 
                 <div className="admin-product-text">
 
-                    Voor nieuwe producten vult u een nieuwe artikelnummer in.
                     <br/>
                     Voor bestaande producten vult u het bestaande artikelnummer in om een bestaand product te wijzigen.
                     <br/>
@@ -80,19 +81,19 @@ function Admin_ProductComponent() {
                     <div>
 
 
-                        {/*<label htmlFor="details-product-id">*/}
-                        {/*    artikelnummer:*/}
-                        {/*    <input*/}
-                        {/*        type="text"*/}
-                        {/*        id="product_id"*/}
-                        {/*        {...register("product_id", {*/}
-                        {/*            required: {value: true, message: message}*/}
-                        {/*        })}*/}
-                        {/*        placeholder="artikelnummer"*/}
-                        {/*    />*/}
-                        {/*</label>*/}
-                        {/*{errors.product_id && <p>{errors.product_id.message}</p>}*/}
-                        {/*<br/>*/}
+                        <label htmlFor="details-product-id">
+                            artikelnummer:
+                            <input
+                                type="text"
+                                id="product_id"
+                                {...register("product_id", {
+                                    required: {value: true, message: message}
+                                })}
+                                placeholder={product_id}
+                            />
+                        </label>
+                        {errors.product_id && <p>{errors.product_id.message}</p>}
+                        <br/>
 
 
                         <label htmlFor="details-product-name">
@@ -230,7 +231,7 @@ function Admin_ProductComponent() {
 
 
                         <div className="product-form-savebutton"
-                        onClick={onSubmit}>
+                             onClick={onSubmit}>
 
                             <SaveButton/>
 
@@ -252,4 +253,4 @@ function Admin_ProductComponent() {
 
 }
 
-export default Admin_ProductComponent;
+export default Admin_EditProductComponent;
