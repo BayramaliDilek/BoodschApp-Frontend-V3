@@ -1,6 +1,6 @@
 import React, {useContext, useState} from 'react';
 import {CartContext} from "../../context/CartContext";
-import {RiCloseLine, RiMenu3Line, RiShoppingBasket2Line} from "react-icons/ri";
+import {RiCloseLine, RiShoppingBasket2Line} from "react-icons/ri";
 import './Cart.css'
 
 
@@ -14,7 +14,7 @@ export const Cart = () => {
     localStorage.setItem(cart, JSON.stringify(cart));
 
 
-    const totalPrice = cart.reduce((acc, curr) => acc + curr.prijs, 0);
+    const totalPrice = cart.reduce((acc, cart) => acc + cart.prijs, 0);
 
     console.log(cart)
     console.log(totalPrice.toFixed(2))
@@ -44,17 +44,30 @@ export const Cart = () => {
 
                             {cart.map((cart, index) => {
                                 return (
-                                    <ul key={index}>{cart.naam}</ul>
+                                    <ul key={index}>
+
+                                        <div className="cart-items">
+
+                                            <div>
+                                                {cart.naam}
+                                            </div>
+                                            <div>
+                                                € {cart.prijs}
+                                            </div>
+
+                                        </div>
+                                    </ul>
+
                                 )
                             })}
 
-                            {cart.length === 0 && <div> winkelwagen is leeg</div>}
+                            {cart.length === 0 && <div> Winkelwagen is leeg</div>}
                             <br/>
 
-                            {Object.keys(cart).length} x
+                            {Object.keys(cart).length} producten
 
                             <br/>
-                            <span>Totaal prijs: € {totalPrice.toFixed(2)}</span>
+                            <h3><strong> Totaal prijs: € {totalPrice.toFixed(2)} </strong></h3>
                         </div>
                     )}
             </div>

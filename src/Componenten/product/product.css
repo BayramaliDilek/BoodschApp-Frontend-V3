@@ -1,7 +1,18 @@
+.info-marker-product{
+    color: #1ba900;
+    position: absolute;
+    margin: 0.05rem 0 0 8.5rem;
+    transition: 0.5s;
+}
+
+.info-marker-product:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
 .AddItemsContainer {
     position: absolute;
     /*margin: 0 0 0 0;*/
-
 }
 
 

@@ -53,8 +53,6 @@ function FruitEnGroente(props) {
                                              product_id={product.id}
                                              productName={product.productName}
                                              productPrice={product.price}
-
-
                                     />
                                     :
 

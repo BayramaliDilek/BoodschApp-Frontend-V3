@@ -38,12 +38,22 @@ function ProductInfo() {
 
                 <section className="page-background">
 
-                    {Object.keys(productInfo).length > 0 &&
+                    {productInfo.picture ?
+
 
                         <ProductInfoComponent key={productInfo.id}
 
                                               fileName={productInfo.picture.fileName}
                                               url={productInfo.picture.url}
+
+                                              product_id={productInfo.id}
+                                              productName={productInfo.productName}
+                                              productPrice={productInfo.price}
+                                              productDescription={productInfo.description}
+                                              productIngredients={productInfo.ingredients}
+                        />
+                        :
+                        <ProductInfoComponent key={productInfo.id}
 
                                               product_id={productInfo.id}
                                               productName={productInfo.productName}

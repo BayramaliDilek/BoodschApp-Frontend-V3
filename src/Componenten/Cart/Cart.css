@@ -19,8 +19,11 @@
     position: fixed;
     margin: -1.5rem 0 0 3rem;
     transition: 0.4s;
+}
 
-
+.cart-items {
+    display: flex;
+    justify-content: space-between;
 }
 
 /*.float-area{*/
