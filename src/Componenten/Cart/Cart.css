@@ -5,6 +5,12 @@
 
 }
 
+.cart-titel-button {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
 .cartNumberShown {
     transform: scale(1.5);
     color: white;
@@ -27,7 +33,6 @@
 .cart-checkout-button {
     box-shadow: rgba(0, 0, 0, 0.3) 3px 5px 5px;
 
-    margin-top: 1rem;
     font-family: inherit;
     border: none;
     width: fit-content;

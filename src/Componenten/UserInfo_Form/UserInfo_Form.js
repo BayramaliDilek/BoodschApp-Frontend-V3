@@ -21,10 +21,8 @@ function UserInfo_Form() {
             await axios.put(`http://localhost:8080/persons/${user.person_id}`,
                 {
                     headers: {
-
                         "Content-Type": "application/json",
                         Authorization: `Bearer ${token}`,
-
                     },
 
                     id: user.id,
@@ -188,21 +186,6 @@ function UserInfo_Form() {
                         <br/>
 
                     </div>
-
-                    {/*<label htmlFor="details-radius">*/}
-                    {/*    Actie-Radius*/}
-                    {/*    <input*/}
-                    {/*        type="text"*/}
-                    {/*        id="radius"*/}
-                    {/*        {...register("person_radius", {*/}
-                    {/*            required: {value: true, message: message}*/}
-                    {/*        })}*/}
-                    {/*        placeholder="Actie-Radius"*/}
-
-                    {/*    />*/}
-                    {/*</label>*/}
-                    {/*{errors.person_radius && <p>{errors.person_radius.message}</p>}*/}
-                    {/*<br/>*/}
 
 
                     <SaveButton/>

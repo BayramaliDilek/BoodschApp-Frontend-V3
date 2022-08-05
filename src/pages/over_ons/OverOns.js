@@ -14,7 +14,7 @@ function OverOns() {
 
                 <div className="Over_ons_article_one_container">
                     <h1>
-                        Welkom bij BoodschApp !
+                        Welkom bij BoodschApp!
                     </h1>
 
                     <p className="P_OverOns">

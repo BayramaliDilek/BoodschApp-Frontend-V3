@@ -1,10 +1,7 @@
-import React, {useState} from 'react';
-
-
-// Nog een DARK-MODE aanmaken !
+import React, {useContext, useState} from 'react';
 
 import './App.css';
-import {Switch, Route, useHistory} from "react-router-dom";
+import {Switch, Route, useHistory, Redirect} from "react-router-dom";
 import {Navbar} from './Componenten';
 
 //Pages//
@@ -19,26 +16,28 @@ import PrivateRoute from "./helpers/PrivateRoute/PrivateRoute";
 import UserInfo_Form from "./Componenten/UserInfo_Form/UserInfo_Form";
 import {Cart} from "./Componenten/Cart/Cart";
 import Admin_UsersComponent from "./Componenten/Admin_UsersComponent/Admin_UsersComponent";
-import AdminRoute from "./helpers/AdminRoute/AdminRoute";
 import Admin_ProductComponent from "./Componenten/Admin_ProductComponent/Admin_ProductComponent";
 import EditProfilePicture from "./Componenten/ImageComponent/EditProfilePicture/EditProfilePicture";
 import EditProductPicture from "./Componenten/ImageComponent/EditProductPicture/EditProductPicture";
 import Admin_EditProductComponent from "./Componenten/Admin_EditProductComponent/Admin_EditProductComponent";
+import Cart_DeliveryRequest from "./Componenten/Cart_DeliveryRequest/Cart_DeliveryRequest";
+import {AuthContext} from "./context/AuthContext";
 
 
 function App() {
+
+    const isAuth = useContext(AuthContext)
 
     return (
         <>
             <Navbar/>
 
-            <div className="cartApp"> <Cart/> </div>
+            <div className="cartApp"><Cart/></div>
 
 
             <Switch>
-
-                <PrivateRoute exact path="/checkout">
-                    {<PrivateRoute> <Cart/> </PrivateRoute>}
+                <PrivateRoute path="/checkout" isAuth={isAuth}>
+                    <Cart/>
                 </PrivateRoute>
 
                 <Route exact path="/login">
@@ -58,32 +57,36 @@ function App() {
                 </Route>
 
                 <PrivateRoute exact path="/users/:user_id">
-                    {<PrivateRoute> <UserInfo_Form/> </PrivateRoute>}
+                    <UserInfo_Form/>
                 </PrivateRoute>
 
-                <PrivateRoute exact path="/users/:user_id/picture">
-                    {<PrivateRoute> <EditProfilePicture/> </PrivateRoute>}
+                <PrivateRoute path="/cartitems/checkout" isAuth={isAuth}>
+                     <Cart_DeliveryRequest/>
                 </PrivateRoute>
 
-                <AdminRoute exact path="/producten-toevoegen/">
-                    {<AdminRoute> <Admin_ProductComponent/> </AdminRoute>}
-                </AdminRoute>
+                <PrivateRoute path="/users/:user_id/picture">
+                     <EditProfilePicture/>
+                </PrivateRoute>
 
-                <Route exact path="/products/picture/:product_id">
-                    {<AdminRoute> <EditProductPicture/> </AdminRoute> }
+                <PrivateRoute path="/producten-toevoegen/">
+                    <Admin_ProductComponent/>
+                </PrivateRoute>
+
+                <PrivateRoute path="/products/picture/:product_id">
+                    <EditProductPicture/>
+                </PrivateRoute>
+
+                <PrivateRoute path="/products/info/:product_id">
+                    <Admin_EditProductComponent/>
+                </PrivateRoute>
+
+                <PrivateRoute path="/gebruikers-bekijken/">
+                   <Admin_UsersComponent/>
+                </PrivateRoute>
+
+                <Route exact path="/persoonsgegevens">
+                    <PersoonGegevens/>
                 </Route>
-
-                <Route exact path="/products/info/:product_id">
-                    {<AdminRoute> <Admin_EditProductComponent/> </AdminRoute> }
-                </Route>
-
-                <AdminRoute exact path="/gebruikers-bekijken/">
-                    {<AdminRoute> <Admin_UsersComponent/> </AdminRoute>}
-                </AdminRoute>
-
-                <PrivateRoute exact path="/persoonsgegevens">
-                    {<PrivateRoute> <PersoonGegevens/> </PrivateRoute>}
-                </PrivateRoute>
 
                 <Route exact path="/register">
                     <Register/>

@@ -43,7 +43,11 @@
     display: flex;
     justify-content: center;
     height: 600px;
-    box-shadow: #8d8d8d 5px 10px 10px;
+    /*box-shadow: #8d8d8d 5px 10px 10px;*/
+}
+
+.Over_ons_foto > img {
+    border-radius: 10rem;
 }
 
 .Over_ons_article_two {

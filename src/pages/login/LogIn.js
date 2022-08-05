@@ -18,7 +18,7 @@ function LogIn() {
     const {register, formState: {errors}, handleSubmit} = useFormContext();
 
     const history = useHistory();
-    const {login, logout, auth} = useContext(AuthContext);
+    const {login, logout, isAuth} = useContext(AuthContext);
 
     const [user, setUser] = useState('');
     const [validName, setValidName] = useState(false);
@@ -65,7 +65,7 @@ function LogIn() {
 
     return (
         <>
-            {!auth ?
+            {!isAuth ?
                 <div className="login_pagina rotate-hor-center">
                     <h1 className="legend">Inloggen</h1>
                     <form className="form-login"

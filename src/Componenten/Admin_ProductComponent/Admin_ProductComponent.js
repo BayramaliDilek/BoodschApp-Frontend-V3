@@ -5,8 +5,11 @@ import {useFormContext} from "react-hook-form";
 import {useHistory} from "react-router-dom";
 import SaveButton from "../buttons/save-button/SaveButton";
 import './Admin_ProductComponent.css'
+import {AuthContext} from "../../context/AuthContext";
 
 function Admin_ProductComponent() {
+
+    const {user} = useContext(AuthContext);
 
     const {register, formState: {errors}, handleSubmit} = useFormContext();
     const message = "..veld is verplicht";
@@ -57,6 +60,19 @@ function Admin_ProductComponent() {
     return (
 
         <>
+
+            {user.roles !== "ROLE_ADMIN" ?
+
+                <div className="admin-route-container">
+                    <div className="admin-route">
+                        <h1>U moet ingelogd zijn als
+                            <br/> ADMINISTRATOR
+                            <br/>om deze content te mogen zien..
+                        </h1>
+                    </div>
+                </div>
+                :
+
 
 
             <div className="Product-Form-Container">
@@ -245,7 +261,7 @@ function Admin_ProductComponent() {
                 </form>
 
             </div>
-
+            }
         </>
     )
 
