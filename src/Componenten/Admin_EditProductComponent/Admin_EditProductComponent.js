@@ -36,7 +36,7 @@ function Admin_EditProductComponent() {
 
     }
 
-    console.log();
+    console.log(useParams());
 
     async function onSubmit(productData) {
         try {

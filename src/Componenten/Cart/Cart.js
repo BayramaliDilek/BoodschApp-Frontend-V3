@@ -2,16 +2,16 @@ import React, {useContext, useState} from 'react';
 import {CartContext} from "../../context/CartContext";
 import {RiCloseLine, RiShoppingBasket2Line} from "react-icons/ri";
 import './Cart.css'
+import {useHistory} from "react-router-dom";
 
 
 export const Cart = () => {
 
+    const history = useHistory();
 
     const [toggleCart, setToggleCart] = useState(false);
 
     const [cart, setCart] = useContext(CartContext);
-
-    localStorage.setItem(cart, JSON.stringify(cart));
 
 
     const totalPrice = cart.reduce((acc, cart) => acc + cart.prijs, 0);
@@ -19,6 +19,10 @@ export const Cart = () => {
     console.log(cart)
     console.log(totalPrice.toFixed(2))
 
+
+    function cart_deliveryRequest() {
+        history.push(`/cartitems/checkout`)
+    }
 
 
     return (
@@ -41,8 +45,18 @@ export const Cart = () => {
                 {toggleCart &&
                     (
                         <div className="cart-layout">
-                            <h1>Winkelwagen</h1>
 
+                            <div className="cart-titel-button">
+                                <h1>Winkelwagen</h1>
+                                <div>
+
+                                    <button className="cart-checkout-button"
+                                            onClick={cart_deliveryRequest}>
+
+                                        Check-out
+                                    </button>
+                                </div>
+                            </div>
                             {cart.map((cart, index) => {
                                 return (
                                     <ul key={index}>
@@ -69,15 +83,6 @@ export const Cart = () => {
 
                             <br/>
                             <h3><strong> Totaal prijs: € {totalPrice.toFixed(2)} </strong></h3>
-
-
-                            <div>
-
-                                <button className="cart-checkout-button">
-
-                                    Check-out
-                                </button>
-                            </div>
 
 
                         </div>

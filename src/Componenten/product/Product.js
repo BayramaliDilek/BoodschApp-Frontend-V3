@@ -27,6 +27,8 @@ export const Product = (props) => {
         } else {
             setCart([...cart, {...product, qty: 1 }]);
         }
+        localStorage.setItem(cart, JSON.stringify(cart));
+
 
         // setCart(curr => [...curr, product]);
     };

@@ -3,7 +3,6 @@ import './productInfoComponent.css';
 
 import {useHistory, useParams} from "react-router-dom";
 import {CartContext} from "../../context/CartContext";
-import AdminRoute from "../../helpers/AdminRoute/AdminRoute";
 
 
 
@@ -86,6 +85,9 @@ export const ProductInfoComponent = (props) => {
                         </button>
 
                     </div>
+
+
+
 
                     <div>
 

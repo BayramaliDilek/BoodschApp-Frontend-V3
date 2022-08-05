@@ -1,23 +1,24 @@
 import React, {useContext} from 'react';
-import {Route, Redirect} from "react-router-dom";
+import {Redirect, Route} from "react-router-dom";
 import {AuthContext} from "../../context/AuthContext";
 
-function PrivateRoute({children}) {
-    const {auth} = useContext(AuthContext);
+
+function PrivateRoute({children, path}) {
+
+    const {isAuth} = useContext(AuthContext);
 
     return (
-        auth === true ? children
-            :
 
+        <Route exact path={path}>
 
-            <p>Om deze content te mogen zien moet u zijn ingelogd<br/>
-                u wordt doorgestuurd..</p>
+            {isAuth ? children
 
+                :
 
-            &&
+                <Redirect to={{pathname: '/login'}}/>
+            }
 
-
-            <Redirect to={{pathname: '/login'}}/>
+        </Route>
     );
 }
 

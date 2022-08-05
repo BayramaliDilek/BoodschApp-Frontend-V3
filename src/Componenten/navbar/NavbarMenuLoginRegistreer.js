@@ -13,12 +13,12 @@ import './login-account-button.css'
 
 function NavbarMenuLoginRegistreer() {
 
-    const {auth} = useContext(AuthContext);
+    const {isAuth} = useContext(AuthContext);
 
 
     return (
         <>
-            {auth === false ?
+            {isAuth === false ?
 
                 <div className="navbar__login-registreer">
                     <NavLink to="/login" exact activeClassName="active-link">Login</NavLink>

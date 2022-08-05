@@ -103,7 +103,6 @@ function Admin_UsersComponent() {
     return (
         <>
 
-            {isAdmin &&
 
                 <div className="userspage-admin-element">
 
@@ -172,7 +171,7 @@ function Admin_UsersComponent() {
                 </section>
 
                 </div>
-            }
+
 
         </>
     )

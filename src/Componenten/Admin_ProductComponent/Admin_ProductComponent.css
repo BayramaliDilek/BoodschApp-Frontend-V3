@@ -8,7 +8,13 @@
 
 .Product-Form-Container {
     padding-top: 10rem;
+}
 
+.admin-route-container {
+    display: flex;
+    padding: 15rem 1rem 1rem 1rem;
+    color: red;
+    justify-content: center;
 }
 
 .product-form {

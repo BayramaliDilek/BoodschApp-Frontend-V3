@@ -4,25 +4,24 @@ import jwtDecode from "jwt-decode";
 import isTokenValid from "../helpers/isTokenValid";
 import axios from "axios";
 
-export const AuthContext = createContext(null);
+export const AuthContext = createContext({});
 
 function AuthContextProvider({children}) {
-    const [auth, toggleAuth] = useState({
+    const [isAuth, toggleIsAuth] = useState({
         isAuth: false,
         user: null,
         status: 'pending',
-    })
-
+    });
     const history = useHistory();
 
     useEffect(() => {
         const token = localStorage.getItem('token');
 
-        if (token && isTokenValid(token)) {
+        if (token ) {
             const decodedToken = jwtDecode(token);
             getData(decodedToken.sub, token);
         } else {
-            toggleAuth({
+            toggleIsAuth({
                 isAuth: false,
                 user: null,
                 status: 'done',
@@ -32,15 +31,15 @@ function AuthContextProvider({children}) {
 
 
     function login(token) {
-        const decodedToken = jwtDecode(token);
         localStorage.setItem('token', token);
+        const decodedToken = jwtDecode(token);
         getData(decodedToken.sub, token);
     }
 
     function logout(e) {
         localStorage.clear();
         e.preventDefault();
-        toggleAuth({
+        toggleIsAuth({
             isAuth: false,
             user: null,
             status: 'done',
@@ -56,12 +55,14 @@ function AuthContextProvider({children}) {
                     "Authorization": `Bearer ${token}`,
                 }
             });
-            toggleAuth({
-                ...auth,
+            toggleIsAuth({
+                ...isAuth,
                 isAuth: true,
                 user: {
                     username: response.data.username,
                     password: response.data.password,
+                    userId: response.data.id,
+                    roles: response.data.authorities[0].authority,
                     person_id: response.data.person.id,
                     person_firstname: response.data.person.personFirstname,
                     person_lastname: response.data.person.personLastname,
@@ -69,8 +70,7 @@ function AuthContextProvider({children}) {
                     person_house_number: response.data.person.personHouseNumber,
                     person_house_number_add: response.data.person.personHouseNumberAdd,
                     person_city: response.data.person.personCity,
-                    person_zipcode: response.data.person.personZipcode,
-                    person_radius: response.data.person.personRadius
+                    person_zipcode: response.data.person.personZipcode
                 },
                 status: 'done',
             });
@@ -82,15 +82,15 @@ function AuthContextProvider({children}) {
     }
 
     const contextData = {
-        auth: auth.isAuth,
-        user: auth.user,
+        isAuth: isAuth.isAuth,
+        user: isAuth.user,
         login: login,
         logout: logout,
     }
 
     return (
         <AuthContext.Provider value={contextData}>
-            {auth.status === 'done' ? children : <p>Ogenblik geduld alstublieft..</p>}
+            {isAuth.status === 'done' ? children : <p>Ogenblik geduld alstublieft..</p>}
         </AuthContext.Provider>
     );
 }
