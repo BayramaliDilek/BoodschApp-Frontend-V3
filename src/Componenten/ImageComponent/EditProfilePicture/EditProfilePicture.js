@@ -3,7 +3,6 @@ import axios from 'axios';
 import {AuthContext} from "../../../context/AuthContext";
 import './EditProfilePicture.css'
 import {useHistory} from "react-router-dom";
-import {useFormContext} from "react-hook-form";
 
 function EditProfilePicture() {
 

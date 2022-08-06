@@ -45,6 +45,13 @@
     align-items: center;
 }
 
+.links-styling {
+    display: flex;
+    flex-direction: row;
+    margin-right: 0.5rem;
+
+}
+
 .navbar__login-registreer {
     /*border: solid red;*/
     font-size: 1.2rem;

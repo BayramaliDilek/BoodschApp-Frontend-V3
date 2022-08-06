@@ -66,10 +66,18 @@ function UserInfo_Form() {
         <>
 
             <div className="UserInfo-Form-Container">
+
+
+
                 <form className="user-info-form"
                       onSubmit={handleSubmit(onSubmit)}>
 
+                    <h1> Wijzig hier uw persoonsgegevens</h1>
+                    <p>Elk veld moet ingevuld zijn voordat u deze gegevens kunt opslaan.. </p>
+
                     <div className="form-names">
+
+
 
                         <label htmlFor="details-firstname">
                             Voornaam:

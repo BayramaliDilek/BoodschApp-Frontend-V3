@@ -69,10 +69,6 @@ function Admin_UsersComponent() {
             console.error(error)
         }
 
-        setTimeout(() => {
-            history.push('/persoonsgegevens');
-        }, 500)
-
     }
 
 
@@ -98,7 +94,7 @@ function Admin_UsersComponent() {
         }
 
         fetchUsers();
-    }, []);
+    }, [users]);
 
     return (
         <>

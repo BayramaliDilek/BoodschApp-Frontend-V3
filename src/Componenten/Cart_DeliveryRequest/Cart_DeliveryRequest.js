@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {CartContext} from "../../context/CartContext";
 import {RiCloseLine, RiShoppingBasket2Line} from "react-icons/ri";
 import './Cart_DeliveryRequest.css'
@@ -31,65 +31,47 @@ function Cart_DeliveryRequest() {
 
     const [productListLong, setProductListLong] = useState([])
 
-    async function sendProductData(productData) {
+    useEffect(() => {
+        setProductListLong( cart.map(product => {
+            return product.artikelnummer
+        }))
+    },[cart])
+
+    // async function handleClick() {
+    //     try {
+    //         await axios.post(
+    //             `http://localhost:8080/deliveryRequests/create`, {
+    //                 productList: productListLong,
+    //                 comment: testComment,
+    //                 applier: 1003
+    //             },
+    //             {
+    //                 headers: {
+    //                     'Content-Type': 'application/json',
+    //                 }
+    //             })
+    //     } catch (e) {
+    //         console.error(e.message)
+    //     }
+    // }
+
+
+    async function sendProductData(e) {
         try {
-
-
-
-
-            // const data = {
-            //
-            //     productList: productListLong,
-            //     comment: {comment},
-            //     applier: user.id
-            // }
-
-
-            // const data = {
-            //
-            //     productList: cart.map((product) => {
-            //         return ( [
-            //                 product.artikelnummer
-            //             ]
-            //         )
-            //     }),
-            //
-            //     // productList: [1002, 1005, 1005],
-            //     comment: {comment},
-            //     applier: user.id,
-            // }
-
-            // console.log(data);
-
-            await axios.post(`http://localhost:8080/deliveryRequests/create`,
+            await axios.post(
+                `http://localhost:8080/deliveryRequests/create`,
                 {
-                    productList: [{productListLong}],
-                    comment: {comment},
-                    applier: 1003
-
-
-                    // data
-
-                    // productList: cart.map((product)=> {
-                    //     return (
-                    //     product.artikelnummer
-                    //     )
-                    // }),
-
-                    // productList: [1002, 1005, 1005],
-                    // comment: {comment},
-                    // applier: 1005,
-
-
-                });
-
-            console.log(productListLong)
-        } catch (error) {
-
-            console.error(error);
-
+                    productList: productListLong,
+                    comment: comment,
+                    applier: user.person_id
+                },{
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
+                })
+        } catch (e) {
+            console.error(e.message)
         }
-
     }
 
     console.log();
@@ -122,7 +104,7 @@ function Cart_DeliveryRequest() {
 
                     {cart && cart.map((product, index) => {
                         // setProductListLong([product.id])
-                        productListLong.push(product.id)
+                        // productListLong.push(product.artikelnummer)
                         return (
                             <ul key={index}>
 
@@ -157,70 +139,70 @@ function Cart_DeliveryRequest() {
 
                     <form className="form-cart-checkout"
                         onSubmit={handleSubmit(sendProductData)}>
-                        <section>
-                            <label htmlFor="firstname-field">Voornaam</label>
-                            <input
-                                name="firstname"
-                                id="firstname-field"
-                                type="text"
-                                value={firstname}
-                                onChange={(e) => setFirstname(e.target.value)}
-                            />
-                        </section>
-                        <section>
-                            <label htmlFor="lastname-field">Achternaam</label>
-                            <input
-                                name="lastname"
-                                id="lastname-field"
-                                type="text"
-                                value={lastname}
-                                onChange={(e) => setLastname(e.target.value)}
-                            />
-                        </section>
-                        <section>
-                            <label htmlFor="zipcode-field">Straatnaam</label>
-                            <input
-                                name="streetName"
-                                id="streetname-field"
-                                type="text"
-                                value={streetName}
-                                onChange={(e) => setStreetName(e.target.value)}
-                            />
-                        </section>
-                        <section>
-                            <label htmlFor="houseNumber-field">Huisnummer</label>
-                            <input
-                                name="houseNumber"
-                                id="houseNumber-field"
-                                type="text"
-                                value={houseNumber}
-                                onChange={(e) => setHouseNumber(e.target.value)}
-                            />
-                        </section>
-                        <section>
-                            <label htmlFor="houseNumberAdd-field">Toevoeging</label>
-                            <input
-                                name="houseNumberAdd"
-                                id="houseNumberAdd-field"
-                                type="text"
-                                value={houseNumberAdd}
-                                onChange={(e) => setHouseNumberAdd(e.target.value)}
-                            />
-                        </section>
+                        {/*<section>*/}
+                        {/*    <label htmlFor="firstname-field">Voornaam</label>*/}
+                        {/*    <input*/}
+                        {/*        name="firstname"*/}
+                        {/*        id="firstname-field"*/}
+                        {/*        type="text"*/}
+                        {/*        value={firstname}*/}
+                        {/*        onChange={(e) => setFirstname(e.target.value)}*/}
+                        {/*    />*/}
+                        {/*</section>*/}
+                        {/*<section>*/}
+                        {/*    <label htmlFor="lastname-field">Achternaam</label>*/}
+                        {/*    <input*/}
+                        {/*        name="lastname"*/}
+                        {/*        id="lastname-field"*/}
+                        {/*        type="text"*/}
+                        {/*        value={lastname}*/}
+                        {/*        onChange={(e) => setLastname(e.target.value)}*/}
+                        {/*    />*/}
+                        {/*</section>*/}
+                        {/*<section>*/}
+                        {/*    <label htmlFor="zipcode-field">Straatnaam</label>*/}
+                        {/*    <input*/}
+                        {/*        name="streetName"*/}
+                        {/*        id="streetname-field"*/}
+                        {/*        type="text"*/}
+                        {/*        value={streetName}*/}
+                        {/*        onChange={(e) => setStreetName(e.target.value)}*/}
+                        {/*    />*/}
+                        {/*</section>*/}
+                        {/*<section>*/}
+                        {/*    <label htmlFor="houseNumber-field">Huisnummer</label>*/}
+                        {/*    <input*/}
+                        {/*        name="houseNumber"*/}
+                        {/*        id="houseNumber-field"*/}
+                        {/*        type="text"*/}
+                        {/*        value={houseNumber}*/}
+                        {/*        onChange={(e) => setHouseNumber(e.target.value)}*/}
+                        {/*    />*/}
+                        {/*</section>*/}
+                        {/*<section>*/}
+                        {/*    <label htmlFor="houseNumberAdd-field">Toevoeging</label>*/}
+                        {/*    <input*/}
+                        {/*        name="houseNumberAdd"*/}
+                        {/*        id="houseNumberAdd-field"*/}
+                        {/*        type="text"*/}
+                        {/*        value={houseNumberAdd}*/}
+                        {/*        onChange={(e) => setHouseNumberAdd(e.target.value)}*/}
+                        {/*    />*/}
+                        {/*</section>*/}
 
 
 
 
-                        <section>
-                            <label htmlFor="zipcode-field">Postcode</label>
-                            <input
-                                name="zipcode"
-                                id="zipcode-field"
-                                type="text"
-                                value={zipcode}
-                                onChange={(e) => setZipcode(e.target.value)}
-                            />
-                        </section>
+                        {/*<section>*/}
+                        {/*    <label htmlFor="zipcode-field">Postcode</label>*/}
+                        {/*    <input*/}
+                        {/*        name="zipcode"*/}
+                        {/*        id="zipcode-field"*/}
+                        {/*        type="text"*/}
+                        {/*        value={zipcode}*/}
+                        {/*        onChange={(e) => setZipcode(e.target.value)}*/}
+                        {/*    />*/}
+                        {/*</section>*/}
 
 
                         <section>

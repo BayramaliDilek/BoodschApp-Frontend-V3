@@ -96,6 +96,7 @@ export const ProductInfoComponent = (props) => {
                                 onClick={addPicture}>
                             Voeg afbeelding toe
                         </button>
+
                         <br/>
                         <button className="product-infoPictureButton"
                                 onClick={editProduct}>

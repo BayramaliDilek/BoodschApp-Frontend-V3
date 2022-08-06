@@ -26,11 +26,13 @@ export const Product = (props) => {
             );
         } else {
             setCart([...cart, {...product, qty: 1 }]);
+            // setCart(curr => [...curr, product]);
         }
+
         localStorage.setItem(cart, JSON.stringify(cart));
 
 
-        // setCart(curr => [...curr, product]);
+
     };
 
 

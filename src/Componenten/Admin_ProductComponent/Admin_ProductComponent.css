@@ -61,6 +61,32 @@ textarea {
 }
 
 
+.Admin_ProductComponent {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    background: -moz-radial-gradient(circle at 39% 61%, rgba(139, 192, 74, 1) 0%, rgba(177, 255, 80, 0.8) 100%);
+    background: -webkit-radial-gradient(circle at 39% 61%, rgba(139, 192, 74, 1) 0%, rgba(177, 255, 80, 0.8) 100%);
+    background: -o-radial-gradient(circle at 39% 61%, rgba(139, 192, 74, 1) 0%, rgba(177, 255, 80, 0.8) 100%);
+    background: -ms-radial-gradient(circle at 39% 61%, rgba(139, 192, 74, 1) 0%, rgba(177, 255, 80, 0.8) 100%);
+    background: radial-gradient(circle at 39% 61%, rgba(139, 192, 74, 1) 0%, rgba(177, 255, 80, 0.8) 100%);
+    box-shadow: rgba(0, 0, 0, 0.34) 5px 10px 20px;
+    border-radius: 20rem 15rem 5rem 15rem;
+
+    height: auto;
+    padding: 3rem 3rem 3rem 3rem;
+    margin: 0 2rem 8rem 2rem;
+}
+
+.Admin_ProductComponent td > img {
+    width: 60px;
+    border-radius: 1rem 5rem;
+}
+
 
 @media screen and (max-width: 1050px) {
     .product-form {
@@ -85,5 +111,9 @@ textarea {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+    }
+
+    .Admin_ProductComponent{
+        transform: scale(0.8);
     }
 }

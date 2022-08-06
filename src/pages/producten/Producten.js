@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 import '../../App.css';
 import './producten.css';
@@ -8,12 +8,8 @@ import Drinken from "./categorien/Drinken/Drinken";
 import Kaas from "./categorien/Kaas/Kaas";
 import Slagerij from "./categorien/Slagerij/Slagerij";
 import Diepvries from "./categorien/Diepvries/Diepvries";
-import {Product} from "../../Componenten";
-import ShoppingCartComponent from "../../Componenten/ShoppingCartComponent/ShoppingCartComponent";
-import product from "../../Componenten/product/Product";
 
-
-function Producten(props) {
+function Producten() {
 
 
     return (
@@ -21,12 +17,7 @@ function Producten(props) {
 
             <div className="background-image">
 
-                {/*<ShoppingCartComponent*/}
-                {/*    onAdd={onAdd}*/}
-                {/*    cartItems={cartItems}> </ShoppingCartComponent>*/}
-
                 <section className="producten-container">
-
 
                     <FruitEnGroente />
 
@@ -39,9 +30,6 @@ function Producten(props) {
                     <Slagerij/>
 
                     <Diepvries/>
-
-
-
 
                 </section>
 

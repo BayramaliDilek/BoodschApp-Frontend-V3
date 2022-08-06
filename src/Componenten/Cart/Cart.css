@@ -30,6 +30,26 @@
     justify-content: space-between;
 }
 
+.cart-button-remove {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+
+    background-color: rgba(89, 89, 89, 0);
+    color: #ffffff;
+    border: solid white 1px;
+    transition: 0.5s;
+}
+
+.cart-button-remove:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+    background-color: rgba(255, 255, 255, 0.47);
+}
+
 .cart-checkout-button {
     box-shadow: rgba(0, 0, 0, 0.3) 3px 5px 5px;
 

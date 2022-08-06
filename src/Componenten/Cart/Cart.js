@@ -19,6 +19,10 @@ export const Cart = () => {
     console.log(cart)
     console.log(totalPrice.toFixed(2))
 
+    const removeItem = (index) => {
+        setCart(cart.filter((o, i) => index !== i));
+    };
+
 
     function cart_deliveryRequest() {
         history.push(`/cartitems/checkout`)
@@ -57,17 +61,19 @@ export const Cart = () => {
                                     </button>
                                 </div>
                             </div>
-                            {cart.map((cart, index) => {
+                            {cart.map((product, index) => {
                                 return (
                                     <ul key={index}>
 
                                         <div className="cart-items">
-
+                                            <button
+                                            className="cart-button-remove"
+                                                onClick={() => removeItem(index)}> <RiCloseLine/>    </button>
                                             <div>
-                                                {cart.naam}
+                                                {product.naam}
                                             </div>
                                             <div>
-                                                € {cart.prijs}
+                                                € {product.prijs}
                                             </div>
 
                                         </div>

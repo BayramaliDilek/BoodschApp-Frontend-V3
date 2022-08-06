@@ -22,11 +22,11 @@ import EditProductPicture from "./Componenten/ImageComponent/EditProductPicture/
 import Admin_EditProductComponent from "./Componenten/Admin_EditProductComponent/Admin_EditProductComponent";
 import Cart_DeliveryRequest from "./Componenten/Cart_DeliveryRequest/Cart_DeliveryRequest";
 import {AuthContext} from "./context/AuthContext";
+import Bestellijsten from "./pages/bestellijsten/Bestellijsten";
 
 
 function App() {
 
-    const isAuth = useContext(AuthContext)
 
     return (
         <>
@@ -36,8 +36,16 @@ function App() {
 
 
             <Switch>
-                <PrivateRoute path="/checkout" isAuth={isAuth}>
+                <PrivateRoute path="/checkout">
                     <Cart/>
+                </PrivateRoute>
+
+                <PrivateRoute path="/deliveryRequest/:id">
+
+                </PrivateRoute>
+
+                <PrivateRoute path="/deliveryRequest">
+                    <Bestellijsten/>
                 </PrivateRoute>
 
                 <Route exact path="/login">
@@ -60,7 +68,7 @@ function App() {
                     <UserInfo_Form/>
                 </PrivateRoute>
 
-                <PrivateRoute path="/cartitems/checkout" isAuth={isAuth}>
+                <PrivateRoute path="/cartitems/checkout">
                      <Cart_DeliveryRequest/>
                 </PrivateRoute>
 
