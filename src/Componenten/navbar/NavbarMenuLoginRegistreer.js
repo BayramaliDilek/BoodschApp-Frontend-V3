@@ -31,6 +31,9 @@ function NavbarMenuLoginRegistreer() {
                 </div>
                 :
                 <span className="login-account-button">
+
+                    <br/>
+
                     <LogOutButton/>
                     <AccountButton/>
                 </span>

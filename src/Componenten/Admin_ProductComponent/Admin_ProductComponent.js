@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, {useContext, useState, useEffect} from "react";
 
 import axios from "axios";
 import {useFormContext} from "react-hook-form";
@@ -6,14 +6,18 @@ import {useHistory} from "react-router-dom";
 import SaveButton from "../buttons/save-button/SaveButton";
 import './Admin_ProductComponent.css'
 import {AuthContext} from "../../context/AuthContext";
+import {ReactComponent as DeleteIcon} from "../../assets/svg-account/deleteButton.svg";
 
 function Admin_ProductComponent() {
 
     const {user} = useContext(AuthContext);
+    const token = localStorage.getItem('token');
 
     const {register, formState: {errors}, handleSubmit} = useFormContext();
     const message = "..veld is verplicht";
     const history = useHistory();
+
+    const [ products, setProducts] = useState([])
 
     async function sendProductData(productdata) {
         try {
@@ -56,6 +60,51 @@ function Admin_ProductComponent() {
 
 
 
+    useEffect(() => {
+
+        async function fetchProducts() {
+
+            try {
+                const response = await axios.get(`http://localhost:8080/products`,
+                    {
+                        headers: {
+                            "Content-Type": "application/json",
+                            "Authorization": `Bearer ${token}`,
+                        }
+                    }
+                );
+                setProducts(response.data)
+
+
+            } catch (error) {
+                console.error('There was an error!', error);
+            }
+        }
+
+        fetchProducts();
+    }, [products]);
+
+
+    async function deleteProduct(productName) {
+        try {
+            await axios.delete(`http://localhost:8080/products/delete/${productName}`,
+                {
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${token}`,
+                    }
+                })
+        } catch (error) {
+
+            console.error(error)
+        }
+
+        setTimeout(() => {
+            history.push('/producten-toevoegen');
+        }, 500)
+
+    }
+
 
     return (
 
@@ -74,15 +123,17 @@ function Admin_ProductComponent() {
                 :
 
 
+                <section>
 
             <div className="Product-Form-Container">
 
 
                 <div className="admin-product-text">
 
-                    Voor nieuwe producten vult u een nieuwe artikelnummer in.
+                    Voor nieuwe producten hoeft u geen artikelnummer in te voeren, deze wordt automatisch aangemaakt.
                     <br/>
                     Voor bestaande producten vult u het bestaande artikelnummer in om een bestaand product te wijzigen.
+                    <br/>
                     <br/>
                     Voor de prijs gebruikt u een 'punt' i.p.v een 'komma' om decimale getallen in te voeren. bijvoorbeeld: € 2.19
 
@@ -249,18 +300,88 @@ function Admin_ProductComponent() {
                         onClick={onSubmit}>
 
                             <SaveButton/>
-
-
                         </div>
-
                     </div>
-
-
-
-
                 </form>
-
             </div>
+
+
+
+
+
+
+
+
+
+
+                <section className="Admin_ProductComponent">
+
+
+                <div>
+
+                <h2> Producten </h2>
+
+
+                </div>
+
+                <table>
+                <thead>
+                <tr>
+
+                <th></th>
+
+                <th>ID/Artnumm.</th>
+                <th>ProductNaam</th>
+                <th>Afbeelding</th>
+                <th>Prijs</th>
+                <th>Omschrijving</th>
+                <th>Ingrediënten</th>
+
+
+                </tr>
+                </thead>
+
+                <tbody className="admin_tbody">
+
+            {products.map((product) => {
+                return <tr key={product.id}>
+
+                <td>
+                <button className="delete-button"
+                onClick={() => deleteProduct(product.id)}>
+                <DeleteIcon/>
+                </button>
+                </td>
+                <td>{product.id}</td>
+                <td>{product.productName}</td>
+                <td>{product.picture && <img src={product.picture.url} alt={product.picture.fileName}/>}</td>
+                <td>{product.price}</td>
+                <td>{product.description}</td>
+                <td>{product.ingredients}</td>
+
+                </tr>
+            })}
+
+
+                </tbody>
+
+                </table>
+
+                </section>
+
+
+
+
+
+
+                </section>
+
+
+
+
+
+
+
             }
         </>
     )

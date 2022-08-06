@@ -9,7 +9,6 @@ import {ReactComponent as NavBarLogo} from '../../assets/NavBarLogo_three.svg';
 
 import '../../App.css';
 import '../navbar/navbar.css'
-import ShoppingCartPage from "../../pages/winkelwagen/ShoppingCartPage";
 
 function NavBar() {
     const [toggleMenu, setToggleMenu] = useState('');
@@ -48,6 +47,7 @@ function NavBar() {
                             <div className="navbar__hamburgermenu_container slide-bottom">
                                 <div className="navbar__menu_container_links">
                                     <NavbarMenuLinks/>
+
                                 </div>
                                 <div className="navbar__menu_container_links_login">
                                     <NavbarMenuLoginRegistreer/>

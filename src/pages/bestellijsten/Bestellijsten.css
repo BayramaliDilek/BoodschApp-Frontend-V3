@@ -1,0 +1,43 @@
+.bestellijsten-page-container {
+    justify-content: center;
+    padding: 12rem 1rem 5rem 1rem;
+    text-align: center;
+}
+
+.Bestellijsten-container {
+    background: -moz-radial-gradient(circle at 39% 61%, rgba(139, 192, 74, 1) 0%, rgba(177, 255, 80, 0.8) 100%);
+    background: -webkit-radial-gradient(circle at 39% 61%, rgba(139, 192, 74, 1) 0%, rgba(177, 255, 80, 0.8) 100%);
+    background: -o-radial-gradient(circle at 39% 61%, rgba(139, 192, 74, 1) 0%, rgba(177, 255, 80, 0.8) 100%);
+    background: -ms-radial-gradient(circle at 39% 61%, rgba(139, 192, 74, 1) 0%, rgba(177, 255, 80, 0.8) 100%);
+    background: radial-gradient(circle at 39% 61%, rgba(139, 192, 74, 1) 0%, rgba(177, 255, 80, 0.8) 100%);
+    box-shadow: rgba(0, 0, 0, 0.34) 5px 10px 20px;
+    border-radius: 20rem 15rem 5rem 15rem;
+
+    height: auto;
+    padding: 3rem 3rem 3rem 3rem;
+    margin: 3rem 2rem 8rem 2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.Bestellijsten-container td > img {
+    width: 60px;
+    border-radius: 1rem 5rem;
+}
+
+
+.bestellijsten_tbody {
+    margin: 0 1rem 1rem 0;
+    text-align: center;
+}
+
+.deliveryRequest_list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}

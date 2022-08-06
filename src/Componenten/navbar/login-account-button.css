@@ -9,3 +9,9 @@
     transition: transform 200ms ease-in-out;
 
 }
+
+.bestellijsten-button-navbar {
+    display: flex;
+    justify-content: center;
+    margin: 0 1rem;
+}
