@@ -68,7 +68,8 @@ export const Cart = () => {
                                         <div className="cart-items">
                                             <button
                                             className="cart-button-remove"
-                                                onClick={() => removeItem(index)}> <RiCloseLine/>    </button>
+                                                onClick={() => removeItem(index)}> <RiCloseLine/>
+                                            </button>
                                             <div>
                                                 {product.naam}
                                             </div>

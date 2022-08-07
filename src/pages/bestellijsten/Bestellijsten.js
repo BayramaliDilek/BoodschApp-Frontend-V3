@@ -1,7 +1,7 @@
 import React, {useEffect, useState, useContext} from "react";
 import axios from "axios";
 
-import {useHistory} from "react-router-dom";
+import {NavLink, useHistory, useParams} from "react-router-dom";
 
 import {AuthContext} from "../../context/AuthContext";
 
@@ -10,7 +10,9 @@ import './Bestellijsten.css'
 import DeleteButton from "../../Componenten/buttons/delete-button/DeleteButton";
 
 
-function Bestellijsten() {
+export const Bestellijsten = (props) => {
+
+
 
     const history = useHistory();
     const token = localStorage.getItem('token');
@@ -59,8 +61,11 @@ function Bestellijsten() {
         fetchDeliveryRequest();
     }, [deliveryRequests]);
 
+
     function redirect() {
-        history.push(`deliveryRequest/${deliveryRequests.id}`)
+
+        history.push(`deliveryRequests/:deliveryRequest_id`)
+
     }
 
     return (
@@ -68,7 +73,7 @@ function Bestellijsten() {
             <section className="bestellijsten-page-container">
 
                 Bekijk hier alle bestel-lijsten. <br/>
-                Hier kunt u als bezorger een lijst uitkiezen door op 'bekijk' te drukken en hierna de bestellijst te
+                Hier kunt u als bezorger een lijst uitkiezen door op 'bekijk' te drukken en hierna de bestellijst
                 bevestigen door op de knop 'bevestig' te drukken.<br/>
                 Na de bezorging kunt u deze afronden door op de knop 'afronden' te drukken.
 
@@ -109,13 +114,18 @@ function Bestellijsten() {
                                         <DeleteButton/>
                                     </div>
                                 </td>
-                                <td onClick={redirect}>bekijk</td>
+                                <td>
+                                    <div onClick={redirect}>
+                                        bekijk
+                                    </div>
+
+                                </td>
                                 <td>{deliveryRequest.id}</td>
                                 <td>{deliveryRequest.applier.personFirstname}</td>
                                 <td>{deliveryRequest.applier.personLastname}</td>
                                 <td>{deliveryRequest.applier.personStreetName} {deliveryRequest.applier.personHouseNumber} {deliveryRequest.applier.personHouseNumberAdd}
                                     <br/>
-                                    {deliveryRequest.applier.personZipcode} {deliveryRequest.applier.personCity}
+                                   <strong> {deliveryRequest.applier.personZipcode} {deliveryRequest.applier.personCity}</strong>
                                 </td>
                                 <td>
                                     {deliveryRequest.status}

@@ -26,7 +26,11 @@ function Admin_EditProductComponent() {
                     ingredients: productdata.product_ingredients,
                     price: productdata.product_price,
                     quantity: productdata.product_quantity,
-                });
+            },{
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
+                })
 
         } catch (error) {
 
@@ -70,6 +74,8 @@ function Admin_EditProductComponent() {
                     Voor bestaande producten vult u het bestaande artikelnummer in om een bestaand product te wijzigen.
                     <br/>
                     Voor de prijs gebruikt u een 'punt' i.p.v een 'komma' om decimale getallen in te voeren. bijvoorbeeld: € 2.19
+                    <br/>
+                    Het opslaan/wijzigen van een product zal alleen lukken als er een artikelnummer, product-naam en prijs zijn ingevuld.
 
 
                 </div>

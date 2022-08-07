@@ -1,0 +1,16 @@
+.product-infoEditButtonAdmin {
+    box-shadow: rgba(141, 141, 141, 0.4) 3px 5px 5px;
+
+    margin-top: 1rem;
+    font-family: inherit;
+    border: none;
+    width: fit-content;
+    background-color: #c3ffc4;
+    transition: 0.4s;
+}
+
+.product-infoEditButtonAdmin:hover{
+    transition: 0.4s;
+    transform: scale(1.05);
+    background-color: #50ff03;
+}
