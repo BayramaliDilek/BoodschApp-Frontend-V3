@@ -23,6 +23,7 @@ import Admin_EditProductComponent from "./Componenten/Admin_EditProductComponent
 import Cart_DeliveryRequest from "./Componenten/Cart_DeliveryRequest/Cart_DeliveryRequest";
 import {AuthContext} from "./context/AuthContext";
 import Bestellijsten from "./pages/bestellijsten/Bestellijsten";
+import BestelLijst from "./Componenten/BestelLijst/BestelLijst";
 
 
 function App() {
@@ -40,11 +41,11 @@ function App() {
                     <Cart/>
                 </PrivateRoute>
 
-                <PrivateRoute path="/deliveryRequest/:id">
-
+                <PrivateRoute path="/deliveryRequests/:deliveryRequest_id">
+                    <BestelLijst/>
                 </PrivateRoute>
 
-                <PrivateRoute path="/deliveryRequest">
+                <PrivateRoute path="/deliveryRequests">
                     <Bestellijsten/>
                 </PrivateRoute>
 

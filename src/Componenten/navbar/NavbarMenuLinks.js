@@ -23,7 +23,7 @@ function NavbarMenuLinks() {
                     <NavLink to="/" exact activeClassName="active-link">Home</NavLink>
                     <NavLink to="/overons" exact activeClassName="active-link">Over ons</NavLink>
                     <NavLink to="/producten" exact activeClassName="active-link">Producten</NavLink>
-                    <NavLink to="/deliveryRequest" exact activeClassName="active-link">Bestellingen</NavLink>
+                    <NavLink to="/deliveryRequests" exact activeClassName="active-link"><strong>Bestellingen</strong></NavLink>
                 </div>
             :
             <div className="navbar__links">

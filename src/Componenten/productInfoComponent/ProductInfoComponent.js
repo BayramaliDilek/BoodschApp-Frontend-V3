@@ -3,7 +3,8 @@ import './productInfoComponent.css';
 
 import {useHistory, useParams} from "react-router-dom";
 import {CartContext} from "../../context/CartContext";
-
+import ProductEditPictureButton from "../buttons/Product-edit-picture-button/ProductEditPictureButton";
+import ProductEditInfoButton from "../buttons/Product-edit-info-button/ProductEditInfoButton";
 
 
 export const ProductInfoComponent = (props) => {
@@ -33,7 +34,6 @@ export const ProductInfoComponent = (props) => {
     function editProduct() {
         history.push(`/products/info/${props.product_id}`)
     }
-
 
 
     return (
@@ -87,21 +87,32 @@ export const ProductInfoComponent = (props) => {
                     </div>
 
 
-
-
                     <div>
 
 
-                        <button className="product-infoPictureButton"
-                                onClick={addPicture}>
-                            Voeg afbeelding toe
-                        </button>
+                        {/*<button className="product-infoPictureButton"*/}
+                        {/*        onClick={addPicture}>*/}
+                        {/*    Voeg afbeelding toe*/}
+                        {/*</button>*/}
+
+                        {/*<button className="product-infoPictureButton"*/}
+                        {/*        onClick={editProduct}>*/}
+                        {/*    Wijzig product*/}
+                        {/*</button>*/}
+
+                        <div
+                            onClick={addPicture}>
+                            <ProductEditPictureButton/>
+                        </div>
+
+                        <div
+                            onClick={editProduct}>
+                            <ProductEditInfoButton/>
+                        </div>
+
 
                         <br/>
-                        <button className="product-infoPictureButton"
-                                onClick={editProduct}>
-                            Wijzig product
-                        </button>
+
 
                     </div>
 

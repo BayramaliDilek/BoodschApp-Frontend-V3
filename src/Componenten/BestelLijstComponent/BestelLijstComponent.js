@@ -3,15 +3,12 @@ import './BestelLijstComponent.css';
 
 
 function BestelLijstComponent({
-                                  deliveryRequest_applier,
-                                  deliveryRequest_productList,
+                                  applier,
+                                  productList,
                                   fileName,
                                   url,
-                                  deliveryRequest_id
+                                  id
                               }) {
-
-
-
 
     return (
 
@@ -35,19 +32,19 @@ function BestelLijstComponent({
 
                          <span className="bestellijst-id">
 
-                             <h5> {deliveryRequest_id} </h5>
+                             <h5> {id} </h5>
 
                          </span>
 
                          <span className="bestellijst-applier">
 
-                             <h5> {deliveryRequest_applier} </h5>
+                             <h5> {applier} </h5>
 
                          </span>
 
                          <span className="bestellijst-productList">
 
-                             <h5> {deliveryRequest_productList} </h5>
+                             <h5> {productList} </h5>
 
                          </span>
 

@@ -17,23 +17,6 @@ function DeleteButton() {
     const [adminInput, setAdminInput] = useState([]);
 
 
-    async function deleteDeliveryRequest(id) {
-        try {
-            await axios.delete(`http://localhost:8080/deliveryRequests/delete/${id}`,
-                {
-                    headers: {
-                        "Content-Type": "application/json",
-                        "Authorization": `Bearer ${token}`,
-                    }
-                })
-        } catch (error) {
-
-            console.error(error)
-        }
-
-    }
-
-
     useEffect(() => {
 
         async function fetchAdmin() {
@@ -74,8 +57,7 @@ function DeleteButton() {
         {isAdmin &&
 
 
-        <button className="delete-button"
-        onClick={deleteDeliveryRequest}>
+        <button className="delete-button">
 
             <DeleteIcon/>
 
