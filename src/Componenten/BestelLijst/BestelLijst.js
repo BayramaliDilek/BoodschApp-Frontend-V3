@@ -3,10 +3,11 @@ import axios from "axios";
 import BestelLijstComponent from "../BestelLijstComponent/BestelLijstComponent";
 
 import './BestelLijst.css'
-import {useParams} from "react-router-dom";
+import {useHistory, useParams} from "react-router-dom";
 
 function BestelLijst() {
 
+    const history = useHistory();
     const token = localStorage.getItem('token');
     const [deliveryRequests, setDeliveryRequests] = useState([]);
     const {deliveryRequest_id} = useParams();
@@ -45,7 +46,7 @@ function BestelLijst() {
                     id: deliveryRequest_id,
                     status: "CONFIRMED",
 
-                });
+                }).then(updateStatusClick)
         } catch (error) {
             console.error(error);
         }
@@ -61,11 +62,15 @@ function BestelLijst() {
                     },
                     id: deliveryRequest_id,
                     status: "FINISHED",
-                });
+                }).then(updateStatusClick)
 
         } catch (error) {
             console.error(error);
         }
+    }
+
+    function updateStatusClick(){
+        history.go(`/deliveryRequests/${deliveryRequest_id}`)
     }
 
     return (
