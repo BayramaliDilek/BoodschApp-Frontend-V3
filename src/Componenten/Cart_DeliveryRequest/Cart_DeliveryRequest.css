@@ -1,3 +1,12 @@
+.memo_deliveryRequest {
+    color: red;
+}
+
+.memo_deliveryRequest_info {
+    color: #000000;
+}
+
+
 .carttestlayout {
     padding: 10rem 0 10rem 0;
     display: flex;

@@ -1,5 +1,4 @@
 .Over_ons_article_one_container h1 {
-    /*border: solid black;*/
     font-size: 50px;
     width:100%;
     padding-bottom: 5rem;
@@ -15,8 +14,6 @@
 }
 
 .Over_ons_article_one {
-    /*margin-top: 6vh;*/
-    /*border: solid red;*/
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -43,7 +40,6 @@
     display: flex;
     justify-content: center;
     height: 600px;
-    /*box-shadow: #8d8d8d 5px 10px 10px;*/
 }
 
 .Over_ons_foto > img {
@@ -51,11 +47,9 @@
 }
 
 .Over_ons_article_two {
-    /*border: solid red;*/
     display: flex;
     flex-direction: row-reverse;
     justify-content: center;
-    /*align-items: center;*/
     padding: 10vh;
 }
 
@@ -70,7 +64,6 @@
 }
 
 .Over_ons_article_two_container h1 {
-    /*border: solid black;*/
     font-size: 50px;
     width:100%;
     padding-bottom: 5vh;

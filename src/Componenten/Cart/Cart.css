@@ -27,7 +27,24 @@
 
 .cart-items {
     display: flex;
+    flex-direction: row;
+    text-align: center;
     justify-content: space-between;
+}
+
+.cart-items-left {
+    display: flex;
+    flex-direction: row;
+    padding-right: 1rem;
+    justify-content: space-between;
+}
+
+.cart-items-name-padding {
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    padding-left: 0.5rem;
+
 }
 
 .cart-button-remove {

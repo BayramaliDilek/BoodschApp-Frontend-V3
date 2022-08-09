@@ -18,15 +18,13 @@ function LogIn() {
     const {register, formState: {errors}, handleSubmit} = useFormContext();
 
     const history = useHistory();
-    const {login, logout, isAuth} = useContext(AuthContext);
+    const {login, isAuth} = useContext(AuthContext);
 
-    const [user, setUser] = useState('');
+    const [user] = useState('');
     const [validName, setValidName] = useState(false);
-    const [userFocus, setUserFocus] = useState(false);
 
-    const [pwd, setPwd] = useState('');
+    const [pwd] = useState('');
     const [validPwd, setValidPwd] = useState(false);
-    const [pwdFocus, setPwdFocus] = useState(false);
 
     const [error, setError] = useState(false);
     const [addSucces, toggleAddSucces] = useState(false);
@@ -112,6 +110,13 @@ function LogIn() {
 
 
                     </form>
+
+                    <p className="form-footer">
+                        Heeft u nog geen account?<br/>
+                        <span className="line">
+                            <NavLink to="/register" exact activeClassName="active-link">Registreer</NavLink>
+                        </span>
+                    </p>
                 </div>
 
                 :
@@ -124,11 +129,8 @@ function LogIn() {
                 </span>
 
             }
-
-
         </>
     )
-
 }
 
 export default LogIn;

@@ -5,20 +5,16 @@ import './kaas.css'
 import '../../producten.css'
 import '../../../../Componenten/product/product.css'
 
-
 function Kaas() {
 
     const [cheeseProducts, setCheeseProducts] = useState([]);
 
     useEffect(() => {
         async function fetchCheeseProducts(e) {
-
-
             try {
                 const response = await axios.get('http://localhost:8080/products/');
 
                 setCheeseProducts(response.data);
-                console.log(response.data);
             } catch (e) {
                 console.error(e);
             }
@@ -39,12 +35,10 @@ function Kaas() {
                         if (product.productType === 'Kaas') {
 
                             return (
-
                                 product.picture !== null ?
 
                                     <Product key={product.id}
 
-                                             fileName={product.picture.fileName}
                                              url={product.picture.url}
                                              product_id={product.id}
                                              productName={product.productName}

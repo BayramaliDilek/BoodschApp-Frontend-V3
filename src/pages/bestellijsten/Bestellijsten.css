@@ -41,3 +41,13 @@
     justify-content: center;
 
 }
+
+.bestellijsten-page-bekijk {
+    transition: 0.2s;
+}
+
+.bestellijsten-page-bekijk:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: 0.2s;
+}

@@ -11,7 +11,6 @@ import Diepvries from "./categorien/Diepvries/Diepvries";
 
 function Producten() {
 
-
     return (
         <>
 

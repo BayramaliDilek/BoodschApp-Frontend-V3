@@ -1,18 +1,15 @@
 import React, {useContext} from 'react';
 import './productInfoComponent.css';
 
-import {useHistory, useParams} from "react-router-dom";
+import {useHistory} from "react-router-dom";
 import {CartContext} from "../../context/CartContext";
 import ProductEditPictureButton from "../buttons/Product-edit-picture-button/ProductEditPictureButton";
 import ProductEditInfoButton from "../buttons/Product-edit-info-button/ProductEditInfoButton";
 
-
 export const ProductInfoComponent = (props) => {
 
     const history = useHistory();
-
     const [cart, setCart] = useContext(CartContext);
-
 
     const addToCart = () => {
         const product = {
@@ -21,11 +18,8 @@ export const ProductInfoComponent = (props) => {
             prijs: props.productPrice,
             url: props.url
         }
-
         setCart(curr => [...curr, product]);
-
     }
-
 
     function addPicture() {
         history.push(`/products/picture/${props.product_id}`)
@@ -35,14 +29,9 @@ export const ProductInfoComponent = (props) => {
         history.push(`/products/info/${props.product_id}`)
     }
 
-
     return (
-
         <>
-
-
             <section className="product-info-container">
-
                 <div className="product-infoImage">
 
                     <img
@@ -57,23 +46,22 @@ export const ProductInfoComponent = (props) => {
 
                 <div className="hl"/>
 
-
                 <div className="product-infoTextButton">
 
                     <div className="product-infoText">
-
 
                         <h1>{props.productName}</h1>
 
                         <p>Artikelnummer: {props.product_id} </p>
                         € {props.productPrice}<br/>
                         <br/>
+
                         <h6>Omschrijving:</h6>
                         <p>{props.productDescription}</p>
                         <br/>
+
                         <h6>Ingrediënten:</h6>
                         <p>{props.productIngredients}</p>
-
 
                     </div>
 
@@ -81,24 +69,10 @@ export const ProductInfoComponent = (props) => {
                         <button className="product-infoButton"
                                 onClick={addToCart}>
                             Voeg item toe
-
                         </button>
-
                     </div>
 
-
                     <div>
-
-
-                        {/*<button className="product-infoPictureButton"*/}
-                        {/*        onClick={addPicture}>*/}
-                        {/*    Voeg afbeelding toe*/}
-                        {/*</button>*/}
-
-                        {/*<button className="product-infoPictureButton"*/}
-                        {/*        onClick={editProduct}>*/}
-                        {/*    Wijzig product*/}
-                        {/*</button>*/}
 
                         <div
                             onClick={addPicture}>
@@ -109,16 +83,11 @@ export const ProductInfoComponent = (props) => {
                             onClick={editProduct}>
                             <ProductEditInfoButton/>
                         </div>
-
-
                         <br/>
-
 
                     </div>
 
-
                 </div>
-
 
             </section>
 

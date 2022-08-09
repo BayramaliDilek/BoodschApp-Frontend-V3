@@ -37,14 +37,9 @@ function UserInfo_Form() {
                 });
 
         } catch (error) {
-
             console.error(error);
-
         }
-
     }
-
-    console.log(user);
 
     async function onSubmit(personData) {
         try {
@@ -61,14 +56,10 @@ function UserInfo_Form() {
         }
     }
 
-
     return (
         <>
 
             <div className="UserInfo-Form-Container">
-
-
-
                 <form className="user-info-form"
                       onSubmit={handleSubmit(onSubmit)}>
 
@@ -76,8 +67,6 @@ function UserInfo_Form() {
                     <p>Elk veld moet ingevuld zijn voordat u deze gegevens kunt opslaan.. </p>
 
                     <div className="form-names">
-
-
 
                         <label htmlFor="details-firstname">
                             Voornaam:
@@ -195,17 +184,11 @@ function UserInfo_Form() {
 
                     </div>
 
-
                     <SaveButton/>
-
-
                 </form>
-
             </div>
-
         </>
     )
-
 }
 
 export default UserInfo_Form;

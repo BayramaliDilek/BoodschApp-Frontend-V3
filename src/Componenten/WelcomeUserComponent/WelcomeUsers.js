@@ -11,12 +11,11 @@ function WelcomeUsers() {
 
             <section className="welcome-UsersPage">
                 <div className="gegevens-groet scale-up-hor-right">
+
                     <p>Welkom </p>
                     <h1> {username}</h1>
 
                 </div>
-
-
             </section>
 
         </>

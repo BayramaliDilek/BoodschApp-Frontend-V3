@@ -35,7 +35,6 @@
 
 
 .navbar__links {
-    /*border: solid red;*/
     font-size: 1.2rem;
     list-style: none;
     display: flex;
@@ -53,7 +52,6 @@
 }
 
 .navbar__login-registreer {
-    /*border: solid red;*/
     font-size: 1.2rem;
     list-style: none;
     display: flex;
@@ -192,9 +190,6 @@
 }
 
 @media screen and (max-width: 740px) {
-    /*.navbar_items_fullscreen {*/
-    /*    display: none;*/
-    /*}*/
 
     .navbar__Menu-medium {
         display: none;

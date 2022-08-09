@@ -1,58 +1,67 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './BestelLijstComponent.css';
 
 
-function BestelLijstComponent({
-                                  applier,
-                                  productList,
-                                  fileName,
-                                  url,
-                                  id
-                              }) {
+function BestelLijstComponent({applier, productList, comment, id, status}) {
+
+    const [products, setProducts] = useState([productList]);
+    const [articles, setArticles] = useState([Object.values(products[0])]);
 
     return (
 
         <>
             <section className="bestellijst-page-container">
 
-
-                <div className="container-ImageButton">
-                    <div className="bestellijst-image"
-                    >
-
-
-                        <img alt={fileName} src={url}/>
-
-
-                    </div>
-                </div>
-
-
                 <span className="container-bestellijst-info">
 
-                         <span className="bestellijst-id">
+                    <span className="bestellijst-id">
+                             <h3>Ordernummer: {id} </h3>
+                        <span>
+                            <h5>
+                                <i>
+                                    Status: {status}
+                                </i>
+                            </h5>
+                        </span>
+                    </span>
+                    <br/>
 
-                             <h5> {id} </h5>
+                    <span className="bestellijst-applier">
+                        Persoonsgegevens:
+                        <h5>{applier.personFirstname} {applier.personLastname}</h5>
+                        <h5>{applier.personStreetName} {applier.personHouseNumber} {applier.personHouseNumberAdd}</h5>
+                        <h5>{applier.personZipcode} {applier.personCity} </h5>
+                    </span>
+                    <br/>
 
-                         </span>
+                    <span className="bestellijst-comment">
+                        Opmerking:
+                        <h5>{comment} </h5>
+                    </span>
+                    <br/>
 
-                         <span className="bestellijst-applier">
+                    <span className="bestellijst-artikellen">
 
-                             <h5> {applier} </h5>
+                        Artikelen:
+                        <ul>
+                             {articles.map((article) => {
+                                 return (
+                                     article.map((article1, index) => {
+                                         return (
+                                             <li key={index}>
+                                                 <h5>
+                                                     x{article1}E
+                                                 </h5>
 
-                         </span>
-
-                         <span className="bestellijst-productList">
-
-                             <h5> {productList} </h5>
-
-                         </span>
+                                             </li>
+                                         )
+                                     }))
+                             })}
+                             </ul>
+                    </span>
 
                 </span>
-
             </section>
-
-
         </>
     );
 }

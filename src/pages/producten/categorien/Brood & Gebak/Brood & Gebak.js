@@ -5,26 +5,20 @@ import './brood-en-gebak.css'
 import '../../producten.css'
 import '../../../../Componenten/product/product.css'
 
-
-
 function BroodEnGebak() {
     const [breadProducts, setBreadProducts] = useState([]);
 
     useEffect(() => {
         async function fetchBreadProducts(e) {
-
-
-
             try {
                 const response = await axios.get('http://localhost:8080/products/');
 
                 setBreadProducts(response.data);
-                console.log(response.data);
+
             } catch (e) {
                 console.error(e);
             }
         }
-
         fetchBreadProducts();
     }, []);
 
@@ -40,18 +34,16 @@ function BroodEnGebak() {
                         if (product.productType === 'Brood')
 
                             return (
-
                                 product.picture !== null ?
 
-                                <Product key={product.id}
+                                    <Product key={product.id}
 
-                                         url={product.picture.url}
+                                             url={product.picture.url}
+                                             product_id={product.id}
+                                             productName={product.productName}
+                                             productPrice={product.price}
 
-                                         product_id={product.id}
-                                         productName={product.productName}
-                                         productPrice={product.price}
-
-                                />
+                                    />
                                     :
                                     <Product key={product.id}
 

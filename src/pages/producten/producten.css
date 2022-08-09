@@ -5,14 +5,8 @@
 
     align-items: center;
 
-    /*flex-basis: fit-content;*/
-    /*flex-shrink: 1;*/
-    /*flex-wrap: wrap;*/
     padding-top: 7rem;
     padding-bottom: 7rem;
-
-
-
 }
 
 
@@ -29,9 +23,8 @@
     list-style-type: none;
 }
 
-
 .background-image {
-    background: url('../../assets/Product_assets/persoonsgegevensBackgroundFoto.jpg') no-repeat center center fixed;
+    background: url('../../assets/productenPaginaBackgroundFoto.jpg') no-repeat center center fixed;
     background-size: cover;
     max-height: 100%;
 }

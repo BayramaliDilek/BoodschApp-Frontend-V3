@@ -29,15 +29,12 @@
     align-items: center;
     min-width: 800px;
     max-width: 800px;
-    /*height: available;*/
 }
 
 @media screen and (max-width: 1050px) {
 
     .diepvries-container {
-
         min-width: 500px;
-
     }
 
 }
@@ -45,9 +42,7 @@
 @media screen and (max-width: 740px) {
 
     .diepvries-container {
-
         min-width: 400px;
-
     }
 
 }

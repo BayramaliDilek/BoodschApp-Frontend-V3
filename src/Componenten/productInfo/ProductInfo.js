@@ -5,7 +5,6 @@ import ProductInfoComponent from "../productInfoComponent/ProductInfoComponent";
 import "./product-info.css"
 import {useParams} from "react-router-dom";
 
-
 function ProductInfo() {
 
     const [productInfo, setProductInfo] = useState([]);
@@ -15,13 +14,11 @@ function ProductInfo() {
 
     useEffect(() => {
         async function fetchProductInfo() {
-
-
             try {
                 const productInfo = await axios.get(`http://localhost:8080/products/${product_id}`);
 
                 setProductInfo(productInfo.data);
-                console.log(productInfo.data);
+
             } catch (e) {
                 console.error(e);
             }
@@ -35,11 +32,9 @@ function ProductInfo() {
         <>
 
             <div className="productInfoContainer">
-
                 <section className="page-background">
 
                     {productInfo.picture ?
-
 
                         <ProductInfoComponent key={productInfo.id}
 
@@ -63,17 +58,7 @@ function ProductInfo() {
                         />
 
                     }
-
-                    <span>
-
-
-
-
-
-                </span>
-
                 </section>
-
             </div>
         </>
     );

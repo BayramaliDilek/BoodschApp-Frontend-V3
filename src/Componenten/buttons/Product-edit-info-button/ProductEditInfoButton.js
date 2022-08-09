@@ -2,7 +2,6 @@ import React , {useContext, useEffect, useState} from "react";
 
 import {AuthContext} from "../../../context/AuthContext";
 import axios from "axios";
-
 import './ProductEditInfoButton.css'
 
 function ProductEditInfoButton() {
@@ -11,7 +10,6 @@ function ProductEditInfoButton() {
     const {user: {username}} = useContext(AuthContext);
     const [isAdmin, setIsAdmin] = useState(false);
     const [adminInput, setAdminInput] = useState([]);
-
 
     useEffect(() => {
 
@@ -33,10 +31,6 @@ function ProductEditInfoButton() {
                 }else {
                     setIsAdmin(false)
                 }
-
-                console.log(response.data.authorities[0].authority)
-
-
             } catch (error) {
                 console.error('There was an error!', error);
             }
@@ -45,24 +39,18 @@ function ProductEditInfoButton() {
         fetchAdmin();
     }, [isAdmin, token]);
 
-
-
     return (
         <>
 
             {isAdmin &&
 
-
                 <button className="product-infoEditPictureAdmin">
-
                     Wijzig product
-
                 </button>
 
             }
         </>
     )
-
 }
 
 export default ProductEditInfoButton;
