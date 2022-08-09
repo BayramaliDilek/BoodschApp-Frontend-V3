@@ -50,7 +50,7 @@ function BestelLijstComponent({applier, productList, comment, id, status}) {
                                          return (
                                              <li key={index}>
                                                  <h5>
-                                                     x{article1}E
+                                                     {article1.replaceAll("-", "").replaceAll("_", "  ")}
                                                  </h5>
 
                                              </li>
