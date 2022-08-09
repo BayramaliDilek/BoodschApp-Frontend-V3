@@ -1,10 +1,9 @@
-import React, {useContext} from "react";
+import React from "react";
 
 import axios from "axios";
 import {useFormContext} from "react-hook-form";
 import {useHistory, useParams} from "react-router-dom";
 import SaveButton from "../buttons/save-button/SaveButton";
-import './Admin_EditProductComponent.css'
 
 function Admin_EditProductComponent() {
 
@@ -16,7 +15,7 @@ function Admin_EditProductComponent() {
 
     async function sendProductData(productdata) {
         try {
-            const response = await axios.put(`http://localhost:8080/products/${product_id}`,
+            await axios.put(`http://localhost:8080/products/${product_id}`,
                 {
 
                     id: productdata.product_id,
@@ -24,49 +23,26 @@ function Admin_EditProductComponent() {
                     productType: productdata.product_type,
                     description: productdata.product_description,
                     ingredients: productdata.product_ingredients,
-                    price: productdata.product_price,
-                    quantity: productdata.product_quantity,
+                    price: productdata.product_price
             },{
                     headers: {
                         'Content-Type': 'application/json',
                     }
-                })
-
-        } catch (error) {
-
-            console.error(error);
-
-        }
-
-    }
-
-    console.log(useParams());
-
-    async function onSubmit(productData) {
-        try {
-            await sendProductData(productData);
-
-            setTimeout(() => {
-
-                history.push(`/producten`)
-
-            }, 500);
-
+                }).then(updatedProduct)
         } catch (error) {
             console.error(error);
         }
     }
 
-
+    function updatedProduct() {
+        history.push(`/producten`)
+    }
 
 
     return (
 
         <>
-
-
             <div className="Product-Form-Container">
-
 
                 <div className="admin-product-text">
 
@@ -77,15 +53,12 @@ function Admin_EditProductComponent() {
                     <br/>
                     Het opslaan/wijzigen van een product zal alleen lukken als er een artikelnummer, product-naam en prijs zijn ingevuld.
 
-
                 </div>
 
                 <form className="product-form"
                       onSubmit={handleSubmit(sendProductData)}>
 
-
                     <div>
-
 
                         <label htmlFor="details-product-id">
                             artikelnummer:
@@ -101,7 +74,6 @@ function Admin_EditProductComponent() {
                         {errors.product_id && <p>{errors.product_id.message}</p>}
                         <br/>
 
-
                         <label htmlFor="details-product-name">
                             Product-naam:
                             <input
@@ -116,7 +88,6 @@ function Admin_EditProductComponent() {
                         {errors.product_name && <p>{errors.product_name.message}</p>}
                         <br/>
 
-
                         <label htmlFor="product_type">
                             <select
                                 id="product_type"
@@ -125,7 +96,6 @@ function Admin_EditProductComponent() {
                                 })}
                                 placeholder="product-soort"
                             >
-
                                 <option value="Fruit">
                                     Fruit
                                 </option>
@@ -200,7 +170,6 @@ function Admin_EditProductComponent() {
 
                     <div>
 
-
                         <label htmlFor="details-product-price">
                             Prijs:
                             <input
@@ -214,41 +183,12 @@ function Admin_EditProductComponent() {
                             />
                         </label>
                         {errors.product_price && <p>{errors.product_price.message}</p>}
-
-
-
-                        <label htmlFor="details-product-quantity">
-                            Voorraad
-                            <input
-                                type="text"
-                                id="product_quantity"
-                                {...register("product_quantity", {
-                                    required: {value: false, message: message}
-                                })}
-                                placeholder="voorraad"
-
-                            />
-                        </label>
-                        {errors.product_quantity && <p>{errors.product_quantity.message}</p>}
                         <br/>
 
-
-
-
-
-                        <div className="product-form-savebutton"
-                             onClick={onSubmit}>
-
+                        <div className="product-form-savebutton">
                             <SaveButton/>
-
-
                         </div>
-
                     </div>
-
-
-
-
                 </form>
 
             </div>

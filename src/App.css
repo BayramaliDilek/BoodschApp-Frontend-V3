@@ -7,7 +7,6 @@
 }
 
 body {
-  /*overflow: hidden scroll;*/
   font-family: "Poppins", sans-serif;
   background: url('./assets/headerBackgroundWhite.jpg') no-repeat center center fixed;
   background-size: cover;
@@ -247,7 +246,6 @@ footer {
 
 
 
-
 .flip-scale-2-hor-top {
   -webkit-animation: flip-scale-2-hor-top 1s cubic-bezier(0.755, 0.050, 0.855, 0.060) reverse both;
   animation: flip-scale-2-hor-top 1s cubic-bezier(0.755, 0.050, 0.855, 0.060) reverse both;
@@ -273,28 +271,3 @@ footer {
     transform-origin: 50% 100%;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

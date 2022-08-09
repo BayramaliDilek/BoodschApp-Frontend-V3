@@ -8,15 +8,12 @@ function EditProfilePicture() {
 
     const token = localStorage.getItem('token');
     const {user: {username}} = useContext(AuthContext);
-
     const [file, setFile] = useState([]);
     const [previewUrl, setPreviewUrl] = useState('');
-
     const history = useHistory();
 
     function handleImageChange(e) {
         const uploadedFile = e.target.files[0];
-        console.log(uploadedFile);
         setFile(uploadedFile);
         setPreviewUrl(URL.createObjectURL(uploadedFile));
     }
@@ -27,14 +24,13 @@ function EditProfilePicture() {
         formData.append("file", file);
 
         try {
-            const result = await axios.put(`http://localhost:8080/users/${username}/picture`, formData,
+            await axios.put(`http://localhost:8080/users/${username}/picture`, formData,
                 {
                     headers: {
                         "Content-Type": "multipart/form-data",
                         "Authorization": `Bearer ${token}`,
                     },
-                })
-            console.log(result.data);
+                }).then(savedPicture)
         } catch (e) {
             console.error(e)
         }
@@ -43,7 +39,6 @@ function EditProfilePicture() {
     function savedPicture() {
         history.push("/persoonsgegevens")
     }
-
 
     return (
 

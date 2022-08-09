@@ -12,9 +12,7 @@
 
 .AddItemsContainer {
     position: absolute;
-    /*margin: 0 0 0 0;*/
 }
-
 
 .buy_plus_button_container button:hover,
 .buy_minus_button_container button:hover{
@@ -28,14 +26,12 @@
     border: 1px greenyellow;
 
     background-color: rgba(0, 0, 0, 0.09);
-    /*color: #000000;*/
     transform: scale(1);
 
     position: absolute;
     margin: 5.5rem 0 0 7.6rem;
     width: 1.25rem;
     transition: 0.4s;
-
 }
 
 .buy_minus_button_container button{
@@ -79,7 +75,6 @@
 .buy_plus_button_container {
     border: none;
     color: #124400;
-    /*background-color: #c0ffb9;*/
 
     width: fit-content;
     height: fit-content;
@@ -87,7 +82,6 @@
 
     transition: 1s;
 }
-
 
 .product {
     border: solid rgba(141, 141, 141, 0.19);
@@ -103,12 +97,7 @@
 
     margin: 5px;
 
-    /*transition: transform 200ms ease-in;*/
     transition: 0.5s;
-}
-
-.container-ImageButton {
-
 }
 
 .product-button {
@@ -131,18 +120,7 @@
     max-width: 10rem;
 }
 
-.product-text {
-}
-
-.product-price {
-
-
-}
-
 .product:hover {
-
-
-    /*transform: scale(1.05);*/
     border: solid rgba(255, 255, 255, 0.51);
     background-color: rgba(255, 255, 255, 0.64);
     cursor: pointer;

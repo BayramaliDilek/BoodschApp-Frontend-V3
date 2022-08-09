@@ -6,55 +6,39 @@ import {useHistory, useParams} from "react-router-dom";
 export const EditProductPicture = (props) => {
 
     const token = localStorage.getItem('token');
-
     const {product_id} = useParams();
-
     const [file, setFile] = useState([]);
     const [previewUrl, setPreviewUrl] = useState('');
-
     const history = useHistory();
 
     function handleImageChange(e) {
         const uploadedFile = e.target.files[0];
-        console.log(uploadedFile);
         setFile(uploadedFile);
         setPreviewUrl(URL.createObjectURL(uploadedFile));
     }
-
-
-    console.log(useParams())
-
-
 
     async function sendImage(e) {
         e.preventDefault();
         const formData = new FormData();
         formData.append("file", file);
-
         try {
-
-
-
-            const result = await axios.put(`http://localhost:8080/products/${product_id}/picture/`, formData,
+            await axios.put(`http://localhost:8080/products/${product_id}/picture/`, formData,
                 {
                     headers: {
                         "Content-Type": "multipart/form-data",
                         "Authorization": `Bearer ${token}`,
                     },
-                })
-            console.log(result.data);
+                }).then(savedPicture)
         } catch (e) {
             console.error(e)
         }
     }
 
-    // function savedPicture() {
-    //     history.push(`/producten`)
-    // }
-
+    function savedPicture() {
+        history.push(`/producten`)
+    }
 
     return (
-
 
         <section className="edit-profile-picture-page">
 

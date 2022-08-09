@@ -1,16 +1,16 @@
-import React, {useContext, useState} from 'react';
+import React from 'react';
 
 import './App.css';
-import {Switch, Route, useHistory, Redirect} from "react-router-dom";
+import {Switch, Route} from "react-router-dom";
 import {Navbar} from './Componenten';
 
 //Pages//
 import OverOns from "./pages/over_ons/OverOns";
 import LogIn from "./pages/login/LogIn";
 import Home from "./pages/home/Home";
-import PersoonGegevens from "./pages/login-pages/persoongegevens/PersoonGegevens";
+import PersoonGegevens from "./pages/persoongegevens/PersoonGegevens";
 import Producten from "./pages/producten/Producten";
-import Register from "./pages/login-pages/register/Register";
+import Register from "./pages/register/Register";
 import ProductInfo from "./Componenten/productInfo/ProductInfo";
 import PrivateRoute from "./helpers/PrivateRoute/PrivateRoute";
 import UserInfo_Form from "./Componenten/UserInfo_Form/UserInfo_Form";
@@ -21,7 +21,6 @@ import EditProfilePicture from "./Componenten/ImageComponent/EditProfilePicture/
 import EditProductPicture from "./Componenten/ImageComponent/EditProductPicture/EditProductPicture";
 import Admin_EditProductComponent from "./Componenten/Admin_EditProductComponent/Admin_EditProductComponent";
 import Cart_DeliveryRequest from "./Componenten/Cart_DeliveryRequest/Cart_DeliveryRequest";
-import {AuthContext} from "./context/AuthContext";
 import Bestellijsten from "./pages/bestellijsten/Bestellijsten";
 import BestelLijst from "./Componenten/BestelLijst/BestelLijst";
 
@@ -33,8 +32,9 @@ function App() {
         <>
             <Navbar/>
 
-            <div className="cartApp"><Cart/></div>
-
+            <div className="cartApp">
+                <Cart/>
+            </div>
 
             <Switch>
                 <PrivateRoute path="/checkout">
@@ -70,11 +70,11 @@ function App() {
                 </PrivateRoute>
 
                 <PrivateRoute path="/cartitems/checkout">
-                     <Cart_DeliveryRequest/>
+                    <Cart_DeliveryRequest/>
                 </PrivateRoute>
 
                 <PrivateRoute path="/users/:user_id/picture">
-                     <EditProfilePicture/>
+                    <EditProfilePicture/>
                 </PrivateRoute>
 
                 <PrivateRoute path="/producten-toevoegen/">
@@ -90,12 +90,12 @@ function App() {
                 </PrivateRoute>
 
                 <PrivateRoute path="/gebruikers-bekijken/">
-                   <Admin_UsersComponent/>
+                    <Admin_UsersComponent/>
                 </PrivateRoute>
 
-                <Route exact path="/persoonsgegevens">
+                <PrivateRoute exact path="/persoonsgegevens">
                     <PersoonGegevens/>
-                </Route>
+                </PrivateRoute>
 
                 <Route exact path="/register">
                     <Register/>
@@ -106,7 +106,7 @@ function App() {
             </Switch>
 
             <footer>
-                <p>Copyright © 2022 BoodschApp. Alle Rechten Voorbehouden.</p>
+                <p>Eindopdracht Full-Stack Developer NOVI College | Bayramali Dilek | Copyright © 2022 BoodschApp | Alle Rechten Voorbehouden.</p>
             </footer>
         </>
 

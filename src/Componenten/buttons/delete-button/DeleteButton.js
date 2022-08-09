@@ -1,15 +1,11 @@
 import React , {useContext, useEffect, useState} from "react";
 
-import './DeleteButton.css'
-
 import { ReactComponent as DeleteIcon} from '../../../assets/svg-account/deleteButton.svg';
 import {AuthContext} from "../../../context/AuthContext";
 import axios from "axios";
-
+import './DeleteButton.css'
 
 function DeleteButton() {
-
-
 
     const token = localStorage.getItem('token');
     const {user: {username}} = useContext(AuthContext);
@@ -38,9 +34,6 @@ function DeleteButton() {
                     setIsAdmin(false)
                 }
 
-                console.log(response.data.authorities[0].authority)
-
-
             } catch (error) {
                 console.error('There was an error!', error);
             }
@@ -50,17 +43,13 @@ function DeleteButton() {
     }, [isAdmin, token]);
 
 
-
     return (
         <>
 
         {isAdmin &&
 
-
         <button className="delete-button">
-
             <DeleteIcon/>
-
         </button>
 
         }

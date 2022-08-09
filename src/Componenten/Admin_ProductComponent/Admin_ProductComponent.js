@@ -21,7 +21,7 @@ function Admin_ProductComponent() {
 
     async function sendProductData(productdata) {
         try {
-            const response = await axios.post(`http://localhost:8080/products/create`,
+            await axios.post(`http://localhost:8080/products/create`,
                 {
 
                     id: productdata.product_id,
@@ -30,34 +30,18 @@ function Admin_ProductComponent() {
                     description: productdata.product_description,
                     ingredients: productdata.product_ingredients,
                     price: productdata.product_price,
-                    quantity: productdata.product_quantity,
-                });
+                }).then(addedNewProduct)
 
         } catch (error) {
-
             console.error(error);
-
         }
-
     }
 
     console.log();
 
-    async function onSubmit(productData) {
-        try {
-            await sendProductData(productData);
-
-            setTimeout(() => {
-
-                history.push(`/producten`)
-
-            }, 500);
-
-        } catch (error) {
-            console.error(error);
-        }
+    function addedNewProduct() {
+        history.push(`/producten`)
     }
-
 
 
     useEffect(() => {
@@ -137,6 +121,8 @@ function Admin_ProductComponent() {
                     <br/>
                     Voor de prijs gebruikt u een 'punt' i.p.v een 'komma' om decimale getallen in te voeren. bijvoorbeeld: € 2.19
 
+                    <br/>
+                    De afbeelding voor een product kunt u achteraf toevoegen door op de 'i' te drukken op het product op de producten-pagina.
 
                 </div>
 
@@ -145,23 +131,6 @@ function Admin_ProductComponent() {
 
 
                     <div>
-
-
-                        {/*<label htmlFor="details-product-id">*/}
-                        {/*    artikelnummer:*/}
-                        {/*    <input*/}
-                        {/*        type="text"*/}
-                        {/*        id="product_id"*/}
-                        {/*        {...register("product_id", {*/}
-                        {/*            required: {value: true, message: message}*/}
-                        {/*        })}*/}
-                        {/*        placeholder="artikelnummer"*/}
-                        {/*    />*/}
-                        {/*</label>*/}
-                        {/*{errors.product_id && <p>{errors.product_id.message}</p>}*/}
-                        {/*<br/>*/}
-
-
                         <label htmlFor="details-product-name">
                             Product-naam:
                             <input
@@ -175,7 +144,6 @@ function Admin_ProductComponent() {
                         </label>
                         {errors.product_name && <p>{errors.product_name.message}</p>}
                         <br/>
-
 
                         <label htmlFor="product_type">
                             <select
@@ -275,29 +243,13 @@ function Admin_ProductComponent() {
                         </label>
                         {errors.product_price && <p>{errors.product_price.message}</p>}
 
-
-
-                        <label htmlFor="details-product-quantity">
-                            Voorraad
-                            <input
-                                type="text"
-                                id="product_quantity"
-                                {...register("product_quantity", {
-                                    required: {value: false, message: message}
-                                })}
-                                placeholder="voorraad"
-
-                            />
-                        </label>
-                        {errors.product_quantity && <p>{errors.product_quantity.message}</p>}
                         <br/>
 
 
 
 
 
-                        <div className="product-form-savebutton"
-                        onClick={onSubmit}>
+                        <div className="product-form-savebutton">
 
                             <SaveButton/>
                         </div>

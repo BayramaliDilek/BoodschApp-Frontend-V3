@@ -5,22 +5,17 @@ import './drinken.css'
 import '../../producten.css'
 import '../../../../Componenten/product/product.css'
 
-
-
 function Drinken() {
 
     const [drinkProducts, setDrinkProducts] = useState([]);
 
     useEffect(() => {
         async function fetchDrinkProducts(e) {
-
-
-
             try {
                 const response = await axios.get('http://localhost:8080/products/');
 
                 setDrinkProducts(response.data);
-                console.log(response.data);
+
             } catch (e) {
                 console.error(e);
             }
@@ -43,18 +38,16 @@ function Drinken() {
                             return (
                                 product.picture !== null ?
 
-                                <Product key={product.id}
-
-                                         url={product.picture.url}
-
-                                         product_id={product.id}
-                                         productName={product.productName}
-                                         productPrice={product.price}
-
-                                />
-                                    :
                                     <Product key={product.id}
 
+                                             url={product.picture.url}
+                                             product_id={product.id}
+                                             productName={product.productName}
+                                             productPrice={product.price}
+
+                                    />
+                                    :
+                                    <Product key={product.id}
 
                                              product_id={product.id}
                                              productName={product.productName}

@@ -1,0 +1,10 @@
+.bestellijst-page-container {
+    display: flex;
+    background-color: #ffefda;
+    box-shadow: rgba(0, 0, 0, 0.18) 5px 10px 20px;
+    padding: 1rem;
+}
+
+.bestellijst-artikellen ul{
+    list-style-type: none;
+}

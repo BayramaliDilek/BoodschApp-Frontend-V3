@@ -1,25 +1,18 @@
 import React, {useEffect, useState, useContext} from "react";
+
 import axios from "axios";
-
 import {NavLink, useHistory, useParams} from "react-router-dom";
-
 import {AuthContext} from "../../context/AuthContext";
-
-import {ReactComponent as DeleteIcon} from "../../assets/svg-account/deleteButton.svg";
-import './Bestellijsten.css'
 import DeleteButton from "../../Componenten/buttons/delete-button/DeleteButton";
+import './Bestellijsten.css'
 
 
-export const Bestellijsten = (props) => {
-
-
+function Bestellijsten() {
 
     const history = useHistory();
     const token = localStorage.getItem('token');
     const {user: {username}} = useContext(AuthContext);
-
-    const [deliveryRequests, setDeliveryRequests] = useState(false);
-
+    const [deliveryRequests, setDeliveryRequests] = useState([]);
 
     async function deleteDeliveryRequest(id) {
         try {
@@ -32,17 +25,12 @@ export const Bestellijsten = (props) => {
                 });
 
         } catch (error) {
-
             console.error(error)
         }
-
     }
 
-
     useEffect(() => {
-
         async function fetchDeliveryRequest() {
-
             try {
                 const response = await axios.get(`http://localhost:8080/deliveryRequests/all`,
                     {
@@ -62,25 +50,35 @@ export const Bestellijsten = (props) => {
     }, [deliveryRequests]);
 
 
-    function redirect() {
-
-        history.push(`deliveryRequests/:deliveryRequest_id`)
-
+    function redirect(deliveryRequest) {
+        history.push(`deliveryRequests/${deliveryRequest}`)
     }
 
     return (
         <>
             <section className="bestellijsten-page-container">
 
-                Bekijk hier alle bestel-lijsten. <br/>
-                Hier kunt u als bezorger een lijst uitkiezen door op 'bekijk' te drukken en hierna de bestellijst
-                bevestigen door op de knop 'bevestig' te drukken.<br/>
-                Na de bezorging kunt u deze afronden door op de knop 'afronden' te drukken.
+                <h5>
+                    Bekijk hier alle bestellingen. <br/>
+                    Hier kunt u als bezorger een lijst uitkiezen door op 'bekijk' te drukken.<br/>
+                    Aan de hand van de status van een bestelling kunt u zien of deze al is afgerond of nog beschikbaar
+                    is voor bezorging.
+                </h5>
+                <br/>
 
+                <h5><i>
+                    *AVAILABLE = beschikbaar voor bezorging<br/>
+                    *CONFIRMED = bestelling opgepakt en bevestigd<br/>
+                    *FINISHED = bestelling bezorgd en afgehandeld
+                </i></h5>
 
                 <section className="Bestellijsten-container">
 
-                    <div><h2> Bestel-lijsten </h2></div>
+                    <div>
+                        <h2>
+                            Bestel-lijsten
+                        </h2>
+                    </div>
 
                     <br/>
 
@@ -91,13 +89,12 @@ export const Bestellijsten = (props) => {
                             <th>
                                 X
                             </th>
-                            <th></th>
+                            <th> -</th>
                             <th>ID/Ordernummer.</th>
                             <th>Naam</th>
                             <th>Achternaam</th>
                             <th>Adres</th>
                             <th>Status</th>
-
 
                         </tr>
                         </thead>
@@ -115,7 +112,8 @@ export const Bestellijsten = (props) => {
                                     </div>
                                 </td>
                                 <td>
-                                    <div onClick={redirect}>
+                                    <div className="bestellijsten-page-bekijk"
+                                         onClick={() => redirect(deliveryRequest.id)}>
                                         bekijk
                                     </div>
 
@@ -125,7 +123,7 @@ export const Bestellijsten = (props) => {
                                 <td>{deliveryRequest.applier.personLastname}</td>
                                 <td>{deliveryRequest.applier.personStreetName} {deliveryRequest.applier.personHouseNumber} {deliveryRequest.applier.personHouseNumberAdd}
                                     <br/>
-                                   <strong> {deliveryRequest.applier.personZipcode} {deliveryRequest.applier.personCity}</strong>
+                                    <strong> {deliveryRequest.applier.personZipcode} {deliveryRequest.applier.personCity}</strong>
                                 </td>
                                 <td>
                                     {deliveryRequest.status}
@@ -135,26 +133,10 @@ export const Bestellijsten = (props) => {
                             </tr>
                         })}
 
-
                         </tbody>
 
                     </table>
-
-
-                    {/*{deliveryRequests && deliveryRequests.map((deliveryRequest) => {*/}
-                    {/*    return (*/}
-
-
-                    {/*        <BestelLijstComponent key={deliveryRequest.id} */}
-                    {/*                              deliveryRequest_applier={deliveryRequest.applier}*/}
-                    {/*                              deliveryRequest_productList={deliveryRequest.productList}*/}
-                    {/*        />*/}
-                    {/*    )*/}
-                    {/*})}*/}
-
-
                 </section>
-
             </section>
 
         </>
