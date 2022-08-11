@@ -10,7 +10,7 @@ import './user-info-form.css'
 function UserInfo_Form() {
 
     const {register, formState: {errors}, handleSubmit} = useFormContext();
-    const message = "..voor bezorging/bestelling is dit veld verplicht";
+    const message = "..dit veld is verplicht";
     const history = useHistory();
     const {user} = useContext(AuthContext);
     const token = localStorage.getItem('token');
@@ -80,7 +80,7 @@ function UserInfo_Form() {
 
                             />
                         </label>
-                        {errors.person_firstname && <p>{errors.person_firstname.message}</p>}
+                        {errors.person_firstname && <p className="form-error">{errors.person_firstname.message}</p>}
                         <br/>
 
                         <label htmlFor="details-lastname">
@@ -95,7 +95,7 @@ function UserInfo_Form() {
 
                             />
                         </label>
-                        {errors.person_lastname && <p>{errors.person_lastname.message}</p>}
+                        {errors.person_lastname && <p className="form-error">{errors.person_lastname.message}</p>}
                         <br/>
 
                     </div>
@@ -114,7 +114,7 @@ function UserInfo_Form() {
 
                             />
                         </label>
-                        {errors.person_street_name && <p>{errors.person_street_name.message}</p>}
+                        {errors.person_street_name && <p className="form-error">{errors.person_street_name.message}</p>}
                         <br/>
 
                         <label htmlFor="details-housenumber">
@@ -129,7 +129,7 @@ function UserInfo_Form() {
 
                             />
                         </label>
-                        {errors.person_house_number && <p>{errors.person_house_number.message}</p>}
+                        {errors.person_house_number && <p className="form-error">{errors.person_house_number.message}</p>}
                         <br/>
 
 
@@ -145,7 +145,7 @@ function UserInfo_Form() {
 
                             />
                         </label>
-                        {errors.person_house_number_add && <p>{errors.person_house_number_add.message}</p>}
+                        {errors.person_house_number_add && <p className="form-error">{errors.person_house_number_add.message}</p>}
 
 
                     </div>
@@ -164,7 +164,7 @@ function UserInfo_Form() {
 
                             />
                         </label>
-                        {errors.person_city && <p>{errors.person_city.message}</p>}
+                        {errors.person_city && <p className="form-error">{errors.person_city.message}</p>}
                         <br/>
 
                         <label htmlFor="details-zipcode">
@@ -179,7 +179,7 @@ function UserInfo_Form() {
 
                             />
                         </label>
-                        {errors.person_zipcode && <p>{errors.person_zipcode.message}</p>}
+                        {errors.person_zipcode && <p className="form-error">{errors.person_zipcode.message}</p>}
                         <br/>
 
                     </div>
