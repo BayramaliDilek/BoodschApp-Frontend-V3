@@ -118,6 +118,7 @@ function Cart_DeliveryRequest() {
                         <section>
                             <label htmlFor="remark-field">Opmerking</label>
                             <textarea
+                                maxLength={240}
                                 name="remark"
                                 id="remark-field"
                                 value={comment}

@@ -36,7 +36,7 @@ function BestelLijstComponent({applier, productList, comment, id, status}) {
 
                     <span className="bestellijst-comment">
                         Opmerking:
-                        <h5>{comment} </h5>
+                        <h5 className="bestellijst-comment">{comment} </h5>
                     </span>
                     <br/>
 

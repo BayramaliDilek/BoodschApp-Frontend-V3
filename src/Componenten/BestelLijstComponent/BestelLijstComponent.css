@@ -8,3 +8,10 @@
 .bestellijst-artikellen ul{
     list-style-type: none;
 }
+
+.bestellijst-comment {
+    display: flex;
+    flex-direction: column;
+    max-width: 20rem;
+}
+

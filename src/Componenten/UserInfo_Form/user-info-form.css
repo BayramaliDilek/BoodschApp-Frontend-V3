@@ -13,7 +13,10 @@
     padding-bottom: 5rem;
 
     transform: scale(0.8);
+}
 
+.form-error {
+    color: red;
 }
 
 .user-info-form input[type=text],
