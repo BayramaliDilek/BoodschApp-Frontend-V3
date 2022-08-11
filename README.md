@@ -1,70 +1,123 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![BoodschApp](src/assets/LOGO%20BoodschApp.png "BoodschApp Logo")
 
-## Available Scripts
+# De BoodschApp | 2022 | Novi College | Eindopdracht Full Stack Developer
 
-In the project directory, you can run:
+Dit is de Frontend voor mijn applicatie "de BoodschApp".
 
-### `npm start`
+[Mijn Github voor de BACK-END vind je hier](https://github.com/BayramaliDilek/BoodschApp-Backend-V3)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+[Mijn Github voor de FRONT-END vind je hier](https://github.com/BayramaliDilek/BoodschApp-Frontend-V3)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Applicatie starten
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Aangezien je de 'ReadMe' al aan het lezen bent ga ik ervanuit dat het clonen van de repository gelukt is.
+if not, hierbij de links;
 
-### `npm run build`
+- HTTPS: `https://github.com/BayramaliDilek/BoodschApp-Frontend-V3.git`
+- SSH: `git@github.com:BayramaliDilek/BoodschApp-Frontend-V3.git`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
+<i>Voordat de applicatie gebruikt kan worden dient deze eerst op een correcte wijze geïnstalleerd te worden.</br>
+Volg de stappen en run daarna de applicatie.</i>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Stap 1
+* npm
+  ```
+  npm install
+  ```
+  
+### Stap 2
+* react-icons
+  ```
+  npm install react-icons
+  ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Stap 3
+* react router dom
+  ```
+  npm install react-router-dom@5.2.0
+  ```
+  (de applicatie is gebouwd met react router 5.2.0 vandaar mijn advies niet de nieuwste versie te installeren om instabiliteit te voorkomen.)
+### Stap 3.1
+* mocht het commando van stap 3 niet werken, probeer dan het volgende commando
+  ```
+  npm install react-router-dom
+  ```
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Stap 4
+* run de applicatie
+  ```sh
+  npm start
+  ```
+### Stap 4.1
+* mocht het commando van stap 3 niet werken, probeer dan het volgende commando
+  ```sh
+  npm run start
+  ```
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Mappen constructie in vogelvlucht..
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Pages
+Hierin zijn alle web-pagina's te vinden voor de web-app.
 
-## Learn More
+### Componenten (Components)
+#### Hierin staan alle componenten die gebruikt zijn over de gehele web-app zoals onder andere;
+- Navbar
+- Product componenten
+- Formulieren
+- Administrator componenten
+- Winkelwagen componenten
+- & meer...  (go check it out!)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Assets
+#### Hier kun je alle gebruikte afbeeldingen vinden. Van de logo tot de afbeeldingen van de bananen..
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Context
+#### Hier staan de gebruikte contexten voor zoals onder andere;
+- CartContext
+- AuthContext
+- FormContext
 
-### Code Splitting
+### Helpers
+- PrivateRoute
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# Gebruikers & Rollen
 
-### Analyzing the Bundle Size
+De volgende gebruikers kunnen gebruikt worden om de applicatie te runnen/testen.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+#### ADMIN_ROLE
+- gebruikersnaam: admin
+- wachtwoord: password
 
-### Making a Progressive Web App
+#### USER_ROLE
+- gebruikersnaam: hans
+- wachtwoord: password
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+<i>In de database zijn er meer rollen die gebruikt kunnen worden, maar ik vind het leuker als
+jullie een eigen gebruiker aanmaken en ervaren hoe vlot dat gaat... Op de registreer pagina kun je een eigen account aanmaken
+en gelijk producten bestellen, vergeet daarna niet je persoongegevens in te vullen! probeer maar..</i>
+tip: wil je zelf een product toevoegen die je kunt bestellen?.. log dan in als 'admin'.. :bowtie:
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Wie.. wat.. hoe?
 
-### Deployment
+Er zijn een heleboel zieken die in deze moeilijke tijden zelf geen boodschappen kunnen en/of
+mogen doen. Dit vinden wij niet kunnen en hebben daar nu de perfecte oplossing voor!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Wij bieden mensen die ziek thuis zitten de gelegenheid gebruik te maken van ons platform om zo
+in contact te komen met mensen die zichzelf
+aanbieden als 'bezorger'. Zo kunnen zij alsnog boodschappen doen.. ...maar dan online!
 
-### `npm run build` fails to minify
+Je kunt heel makkelijk kiezen uit ons assortiment welke producten je nodig hebt. Deze voeg je toe in je winkelwagen en
+worden ze thuis bij je
+bezorgd door één van de bezorgers die zich heel goed houden aan de voorzorgsmaatregelen die we handhaven i.v.m. corona. Mondkapjes
+en de handschoenen staan paraat!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+###### Eindopdracht Full-Stack Developer NOVI College | Bayramali Dilek | Copyright © 2022 BoodschApp | Alle Rechten Voorbehouden.
