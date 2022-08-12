@@ -12,7 +12,7 @@ function Admin_UsersComponent() {
     const history = useHistory();
 
     const token = localStorage.getItem('token');
-    const {user: {username}} = useContext(AuthContext);
+    const {user} = useContext(AuthContext);
 
     const [isAdmin, setIsAdmin] = useState(false);
     const [users, setUsers] = useState([]);
@@ -24,35 +24,35 @@ function Admin_UsersComponent() {
     }
 
 
-    useEffect(() => {
-
-        async function fetchAdmin() {
-
-            try {
-                const response = await axios.get(`http://localhost:8080/users/${username}/`,
-                    {
-                        headers: {
-                            "Content-Type": "application/json",
-                            "Authorization": `Bearer ${token}`,
-                        }
-                    }
-                );
-                setAdminInput(response.data)
-
-                if (response.data.authorities[0].authority === 'ROLE_ADMIN') {
-                    setIsAdmin(true)
-                } else {
-                    setIsAdmin(false)
-                }
-
-
-            } catch (error) {
-                console.error('There was an error!', error);
-            }
-        }
-
-        fetchAdmin();
-    }, [isAdmin, token]);
+    // useEffect(() => {
+    //
+    //     async function fetchAdmin() {
+    //
+    //         try {
+    //             const response = await axios.get(`http://localhost:8080/users/${username}/`,
+    //                 {
+    //                     headers: {
+    //                         "Content-Type": "application/json",
+    //                         "Authorization": `Bearer ${token}`,
+    //                     }
+    //                 }
+    //             );
+    //             setAdminInput(response.data)
+    //
+    //             if (response.data.authorities[0].authority === 'ROLE_ADMIN') {
+    //                 setIsAdmin(true)
+    //             } else {
+    //                 setIsAdmin(false)
+    //             }
+    //
+    //
+    //         } catch (error) {
+    //             console.error('There was an error!', error);
+    //         }
+    //     }
+    //
+    //     fetchAdmin();
+    // }, [isAdmin, token]);
 
 
     async function deleteUser(username) {
@@ -99,76 +99,88 @@ function Admin_UsersComponent() {
     return (
         <>
 
+            {user.roles !== "ROLE_ADMIN" ?
+
+                <div className="admin-route-container">
+                    <div className="admin-route">
+                        <h1>U moet ingelogd zijn als
+                            <br/> ADMINISTRATOR
+                            <br/>om deze content te mogen zien..
+                        </h1>
+                    </div>
+                </div>
+                :
+
 
                 <div className="userspage-admin-element">
 
-                <section className="Admin_UsersComponent">
+                    <section className="Admin_UsersComponent">
 
 
-                    <div>
+                        <div>
 
-                        <h2> GEBRUIKERS </h2>
+                            <h2> GEBRUIKERS </h2>
 
 
-                    </div>
+                        </div>
 
-                    <table>
-                        <thead>
-                        <tr>
+                        <table>
+                            <thead>
+                            <tr>
 
-                            <th></th>
+                                <th></th>
 
-                            <th>Gebruikers-ID</th>
-                            <th>GEBRUIKSNAAM</th>
-                            <th>Profiel-foto</th>
-                            <th>E-mail</th>
-                            <th>Voornaam</th>
-                            <th>Achternaam</th>
-                            <th>Straatnaam</th>
-                            <th>Huisnummer</th>
-                            <th>Toevoeging</th>
-                            <th>Postcode</th>
-                            <th>Woonplaats</th>
-
-                        </tr>
-                        </thead>
-
-                        <tbody className="admin_tbody">
-
-                        {users.map((user) => {
-                            return <tr key={user.id}>
-
-                                <td>
-                                    <button className="delete-button"
-                                            onClick={() => deleteUser(user.username)}>
-                                        <DeleteIcon/>
-                                    </button>
-                                </td>
-                                <td>{user.id}</td>
-                                <td>{user.username}</td>
-                                <td>{user.picture && <img src={user.picture.url} alt={user.picture.fileName}/>}</td>
-                                <td>{user.email}</td>
-                                <td>{user.person.personFirstname}</td>
-                                <td>{user.person.personLastname}</td>
-                                <td>{user.person.personStreetName}</td>
-                                <td>{user.person.personHouseNumber}</td>
-                                <td>{user.person.personHouseNumberAdd}</td>
-                                <td>{user.person.personZipcode}</td>
-                                <td>{user.person.personCity}</td>
+                                <th>Gebruikers-ID</th>
+                                <th>GEBRUIKSNAAM</th>
+                                <th>Profiel-foto</th>
+                                <th>E-mail</th>
+                                <th>Voornaam</th>
+                                <th>Achternaam</th>
+                                <th>Straatnaam</th>
+                                <th>Huisnummer</th>
+                                <th>Toevoeging</th>
+                                <th>Postcode</th>
+                                <th>Woonplaats</th>
 
                             </tr>
-                        })}
+                            </thead>
+
+                            <tbody className="admin_tbody">
+
+                            {users.map((user) => {
+                                return <tr key={user.id}>
+
+                                    <td>
+                                        <button className="delete-button"
+                                                onClick={() => deleteUser(user.username)}>
+                                            <DeleteIcon/>
+                                        </button>
+                                    </td>
+                                    <td>{user.id}</td>
+                                    <td>{user.username}</td>
+                                    <td>{user.picture && <img src={user.picture.url} alt={user.picture.fileName}/>}</td>
+                                    <td>{user.email}</td>
+                                    <td>{user.person.personFirstname}</td>
+                                    <td>{user.person.personLastname}</td>
+                                    <td>{user.person.personStreetName}</td>
+                                    <td>{user.person.personHouseNumber}</td>
+                                    <td>{user.person.personHouseNumberAdd}</td>
+                                    <td>{user.person.personZipcode}</td>
+                                    <td>{user.person.personCity}</td>
+
+                                </tr>
+                            })}
 
 
-                        </tbody>
+                            </tbody>
 
-                    </table>
+                        </table>
 
-                </section>
+                    </section>
 
                 </div>
 
-
+            }
         </>
     )
 }
