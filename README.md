@@ -40,6 +40,7 @@ Volg de stappen en run daarna de applicatie.</i>
   npm install react-router-dom@5.2.0
   ```
   (de applicatie is gebouwd met react router 5.2.0 vandaar mijn advies niet de nieuwste versie te installeren om instabiliteit te voorkomen.)
+
 ### Stap 3.1
 * mocht het commando van stap 3 niet werken, probeer dan het volgende commando
   ```

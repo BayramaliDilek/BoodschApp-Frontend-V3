@@ -52,7 +52,6 @@ function BestelLijstComponent({applier, productList, comment, id, status}) {
                                                  <h5>
                                                      {article1.replaceAll("-", "").replaceAll("_", "  ")}
                                                  </h5>
-
                                              </li>
                                          )
                                      }))
